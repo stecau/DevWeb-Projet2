@@ -1,0 +1,11 @@
+/* Déclaration initiale */
+
+* {
+    box-sizing: border-box;
+   /* box-sizing est appliqué à tous les éléments */
+   }
+
+.box {
+   box-sizing: border-box; /* Opera/IE 8+ */
+/* box-sizing est appliqué seulement à cette classe */
+} 
