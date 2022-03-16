@@ -35,3 +35,9 @@ h2
 {
     float: left;
 }
+
+/* Arret du flottant pour du texte en dessous */
+.stopflottant
+{
+    clear: both;
+}
