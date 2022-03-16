@@ -3,6 +3,7 @@ p
     color: grey;
     font-size: 2ex;
     font-style: normal;
+    text-align: justify; /* text-align ne marche que sur des balises de block et pas sur les balises de inline */
 }
 
 h2
