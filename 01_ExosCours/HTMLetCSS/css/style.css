@@ -1,14 +1,17 @@
 p
 {
     color: grey;
+    font-size: 2ex;
 }
 
 .salutation /* Utilisation d'une class ; elle peut être dans plusieurs balise */
 {
     color: blue;
+    font-size: 2.5ex;
 }
 
 #cours /* Utilisation d'un ID ; il doit être unique, utilisé dans une seule balise */
 {
     color: red;
+    font-size: 3ex;
 }
