@@ -1,7 +1,7 @@
-/* Déclaration initiale */
+/* Déclaration initiale for BOX-SIZING */
 
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
    /* box-sizing est appliqué à tous les éléments */
    }
 
@@ -9,3 +9,15 @@
    box-sizing: border-box; /* Opera/IE 8+ */
 /* box-sizing est appliqué seulement à cette classe */
 } 
+
+/* ========================================================================== */
+
+/* Definition of the Google font polices */
+
+body{
+    font-family: "Open sans", Verdana, sans-serif;
+}
+
+#p2{
+  font-family: "Roboto", Verdana, sans-serif;
+}
