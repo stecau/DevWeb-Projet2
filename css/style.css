@@ -15,9 +15,17 @@
 /* Definition of the Google font polices */
 
 body{
-    font-family: "Open sans", Verdana, sans-serif;
+    font-family: "Raleway", Verdana, sans-serif;
 }
 
 #p2{
-  font-family: "Roboto", Verdana, sans-serif;
+  font-family: "Raleway", Verdana, sans-serif;
+}
+
+/* ========================================================================== */
+
+/* Definition of the Icon font awesome style */
+
+i {
+    color: red
 }
