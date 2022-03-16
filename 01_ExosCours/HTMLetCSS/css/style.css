@@ -7,3 +7,8 @@ p
 {
     color: blue;
 }
+
+#cours /* Utilisation d'une class ; elle peut être dans plusieurs balise */
+{
+    color: red;
+}
