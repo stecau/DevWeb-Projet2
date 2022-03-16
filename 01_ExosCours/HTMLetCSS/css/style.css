@@ -5,6 +5,11 @@ p
     font-style: normal;
 }
 
+h2
+{
+    text-decoration: overline;
+}
+
 .salutation /* Utilisation d'une class ; elle peut être dans plusieurs balise */
 {
     color: blue;
@@ -17,4 +22,9 @@ p
     color: red;
     font-size: 3ex;
     font-weight: bold;
+}
+
+.suppr
+{
+    text-decoration: line-through;
 }
