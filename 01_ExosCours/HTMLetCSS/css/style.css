@@ -1,4 +1,9 @@
 p
 {
+    color: grey;
+}
+
+.salutation /* Utilisation d'une class ; elle peut être dans plusieurs balise */
+{
     color: blue;
 }
