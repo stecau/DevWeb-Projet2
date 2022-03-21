@@ -1,31 +1,74 @@
+/* ========================================================================== */
 /* Déclaration initiale for BOX-SIZING */
-
 * {
     box-sizing: content-box;
    /* box-sizing est appliqué à tous les éléments */
    }
 
-.box {
-   box-sizing: border-box; /* Opera/IE 8+ */
-/* box-sizing est appliqué seulement à cette classe */
-} 
-
 /* ========================================================================== */
-
 /* Definition of the Google font polices */
-
 body{
     font-family: "Raleway", Verdana, sans-serif;
 }
 
-#p2{
-  font-family: "Raleway", Verdana, sans-serif;
+/* ========================================================================== */
+/* Definition of the Icon Fontawesome style */
+i {
+    color: #0065FC
 }
 
 /* ========================================================================== */
-
-/* Definition of the Icon font awesome style */
-
-i {
-    color: red
+/* Definition of the bloc_page style */
+#bloc_page{
+    width: 992px;
+    margin: auto;
 }
+
+/* ========================================================================== */
+/* Definition of the Header style */
+header{
+    display: flex; /* use of flexbox */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{ /* Style for the logo */
+    width: 60px;
+    margin: 0px 0px 0px 45px;
+}
+
+nav ul
+{
+    list-style-type: none; /* no puce */
+    display: flex; /* use of flexbox for li */
+    margin: 0px 25px 0px 25px; /* 25px from page border */
+}
+
+nav li
+{
+    margin: 0px 10px 0px 10px; /* 10px from page border */
+}
+
+nav a
+{
+    font-size: 0.65em;
+    color: #000;
+    padding: 33px 15px 0px 15px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #0065FC;
+    border-top: 2px solid #0065FC;
+}
+
+
+/* #0065FC Bleu */
+/* #DEEBFF bleu clair */
+/* #F2F2F2 gris */
+
+/* 6000 largeur pour 992 => facteur de 6 */
+
+
+
