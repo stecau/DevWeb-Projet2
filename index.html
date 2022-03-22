@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
@@ -35,7 +35,7 @@
 
             <!-- Text sections -->
             <h1>
-                Trouver votre hébergement pour des vacances de rêve
+                Trouvez votre hébergement pour des vacances de rêve
             </h1>
             <p>
                 En plein centre ville ou en pleine nature
@@ -45,25 +45,25 @@
             <form method="post" action="">
                 <p>
                     <label for="ville"><i class="fas fa-map-marker-alt"></i></label>
-                    <input type="search" name="ville" id="ville" placeholder="Marseille, France" size="30" maxlength="10" />
-                    <input type="button" value="Rechercher" name="button" id="button" />
+                    <input type="search" name="ville" id="ville" placeholder="Marseille, France" class="f_ville" />
+                    <input type="button" value="Rechercher" name="button" id="button" class="f_button" />
                 </p>
             </form>
 
             <!-- Filters section -->
-            <div>
+            <div class="filtres">
                 <h2>Filtres</h2>
                 <ul>
-                    <li><i class="fas fa-money-bill-wave"></i>Economique</li>
-                    <li><i class="fas fa-child"></i>Familial</li>
-                    <li><i class="fas fa-heart"></i>Romantique</li>
-                    <li><i class="fas fa-dog"></i>Animaux autorisés</li>
+                    <li class="economique"><i class="fas fa-money-bill-wave"></i><span>Economique</span></li>
+                    <li class="familial"><i class="fas fa-child"></i><span>Familial</span></li>
+                    <li><i class="fas fa-heart"></i><span>Romantique</span></li>
+                    <li><i class="fas fa-dog"></i><span>Animaux autorisés</span></li>
                 </ul>
             </div>
 
             <!-- Info section -->
-            <p>
-                <i class="fas fa-info"></i>Plus de 500 logements sont disponibles dans cette ville
+            <p class="info">
+                <i class="fas fa-info"></i><span>Plus de 500 logements sont disponibles dans cette ville</span>
             </p>
 
         </section>
