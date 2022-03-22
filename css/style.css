@@ -49,6 +49,8 @@ header{
     display: flex; /* use of flexbox */
     justify-content: space-between;
     align-items: center;
+
+    background-color: bisque;
 }
 
 header img{ /* Style for the logo */
@@ -141,6 +143,17 @@ nav a:hover
     }
 }
 
+/* ========================================================================== */
+/* Definition of the 'Recherche' Section style */
+.s_recherche{
+
+    background-color: grey;
+}
+
+.s_recherche h1{
+    margin-top: 0px;
+    
+}
 
 /* #0065FC Bleu */
 /* #DEEBFF bleu clair */
