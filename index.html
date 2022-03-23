@@ -19,10 +19,8 @@
     <div  id="bloc_page"> <!-- div for the page size -->
         <!-- Creation of the header with logo and nav menu -->
         <header>
-            <h1> <!-- Logo in an H1 tag -->
-                <img src="images/Booki.png" alt="Logo de Booki">
-            </h1>
-            <nav> <!-- Navigation menu based on unordered list -->
+            <img src="images/Booki.png" alt="Logo de Booki" class="logo_header" /> <!-- Logo -->
+            <nav class="menu"> <!-- Navigation menu based on unordered list -->
                 <ul>
                     <li><a href="#">Hébergements</a></li>
                     <li><a href="#">Activités</a></li>
@@ -32,7 +30,6 @@
 
         <!-- Creation of the 'recherche' section -->
         <section class="s_recherche">
-
             <!-- Text sections -->
             <h1>
                 Trouvez votre hébergement pour des vacances de rêve
@@ -43,11 +40,9 @@
 
             <!-- Form section -->
             <form method="post" action="">
-                <p>
-                    <label for="ville"><i class="fas fa-map-marker-alt"></i></label>
-                    <input type="search" name="ville" id="ville" placeholder="Marseille, France" class="f_ville" />
-                    <input type="button" value="Rechercher" name="button" id="button" class="f_button" />
-                </p>
+                <label for="ville"><i class="fas fa-map-marker-alt"></i></label>
+                <input type="search" name="ville" id="ville" placeholder="Marseille, France" class="f_ville" />
+                <input type="button" value="Rechercher" name="button" id="button" class="f_button" />
             </form>
 
             <!-- Filters section -->
