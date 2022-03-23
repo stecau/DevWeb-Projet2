@@ -45,42 +45,42 @@ i {
 
 /* ========================================================================== */
 /* Definition of the Header style */
-header{
+header{ /* header first layer style : use of flex-box */
     display: flex; /* use of flexbox */
     justify-content: space-between;
     align-items: center;
 }
 
-header img{ /* Style for the logo */
+header img{ /* Style of the image for the logo */
     width: 65px;
     margin: 0px 0px 0px 45px;
 }
 
-header h1{ /* Style for the logo */
+header h1{ /* Style of the title for the logo */
     margin: 15px 0px 15px 0px;
     padding: 0px;
 }
 
-nav ul
+nav ul /* Style of the nav menu */
 {
     list-style-type: none; /* no puce */
     display: flex; /* use of flexbox for li */
     margin: 0px 25px 0px 25px; /* 25px from page border */
 }
 
-nav a
+nav a /* Style of the link in the nav menu */
 {
     font-size: 85%;
     font-weight: 400;
     color: #000;
     padding: 26px 30px 0px 20px;
-    text-decoration: none;
+    text-decoration: none; /* No link default style */
 }
 
-nav a:hover
+nav a:hover /* Style of the link in the nav menu when pointer hover */
 {
     color: #0065FC;
-    border-top: 2px solid #0065FC;
+    border-top: 2px solid #0065FC; /* Border appear */
 }
 
 /* Tablette screen */
@@ -92,182 +92,201 @@ nav a:hover
 /* Phone screen ; standard style */
 @media screen and (max-width: 767px)
 {
-    header{
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
+    header{ /* header first layer style : modification of flex-box behavior */
+        flex-direction: column; /* Change of the direction for logo and nav menu */
+        justify-content: center; /* center in the main direction */
+        align-items: stretch; /* stretch to fill the place in the second direction */
     }
 
-    header img{ /* Style for the logo */
-        margin-left: 15px;
+    header img{ /* Style of the image for the logo */
+        margin-left: 15px; /* Reduction of the margin in the left */
     }
 
-    header h1{ /* Style for the logo */
-        text-align: center;
+    header h1{ /* Style of the title for the logo */
+        text-align: center; /* center the text */
     }
 
-    nav ul
+    nav ul /* Style of the nav menu */
     {
-        margin: 0px; /* 25px from page border */
-        padding: 0px;
+        margin: 0px; /* No more margin for ul */
+        padding: 0px; /* No more padding for ul */
     }
 
-    nav li
+    nav li /* Style of the items in the nav menu */
     {
-        width: 100%;
-        margin: auto; /* 10px from page border */
-        padding: 0px;
-        display: flex;
-        justify-content: stretch;
+        width: 100%; /* Set width 100% to fill space */
+        margin: auto; /* margin auto to center */
+        padding: 0px; /* no padding for border when hover */
+        display: flex; /* to position the link */
+        justify-content: stretch; /* to fill the place */
     }
 
-    nav a
+    nav a /* Style of the link in the nav menu */
     {
-        width: 100%;
-        text-align: center;
+        width: 100%; /* Set width 100% to fill space */
+        text-align: center; /* Get text centered */
         font-size: 75%;
-        padding: 5px 0px 10px 0px;
-        border-bottom: 2px solid #F2F2F2;
+        padding: 5px 0px 10px 0px; /* top and bottom padding to position and border distance */
+        border-bottom: 2px solid #F2F2F2; /* set grey border for non-hover link */
     }
 
-    nav a:hover
+    nav a:hover /* Style of the link in the nav menu when pointer hover */
     {
-        border-bottom: 2px solid #0065FC;
-        border-top: 0px solid #0065FC;
+        border-bottom: 2px solid #0065FC; /* set bottom border for hover link */
+        border-top: 0px solid #0065FC; /* no more top border for hover link from normal screen */
     }
 }
 
 /* ========================================================================== */
 /* Definition of the 'Recherche' Section style */
-.s_recherche h1{
-    margin: 0px 0px 0px 35px;
+.s_recherche h1{ /* First title style */
+    margin: 0px 0px 0px 35px; /* margin left to position the text and 0 for other */
     font-size: 95%;
     font-weight: 600;
 }
 
-.s_recherche p{
-    margin: 0px 0px 0px 35px;
-    padding: 5px 0px 5px 0px;
+.s_recherche p{ /* Second line style */
+    margin: 0px 0px 0px 35px; /* margin left to position the text and 0 for other */
+    padding: 5px 0px 5px 0px; /* padding top and bottom to position the text and 0 for other */
     font-size: 70%;
 }
 
-form{
-    margin-top: 5px;
-    margin-bottom: 20px;
+form{ /* First layer style for the form */
+    margin-top: 5px; /* margin top to position the form with the above text */
+    margin-bottom: 20px; /* margin bottom to position the form with the filters section */
 }
 
-label i{
-    appearance: none;
-    color: #000;
-    background-color: #F2F2F2;
-    padding: 13px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin: 0px;
+label i{ /* style of the search label icon */
+    color: #000; /* black icon */
+    background-color: #F2F2F2; /* grey background */
+    padding: 13px; /* padding to define the size of the background */
+    border-top-left-radius: 10px; /* left border radius to round the background */
+    border-bottom-left-radius: 10px; /* left border radius to round the background */
+    margin: 0px; /* no margin, position made in the form */
 }
 
-input{
-    margin: 0px;
+input{ /* 1st layer style of the two inputs */
+    appearance: none; /* try to suppress default behaviour */
+    margin: 0px; /* no margin, position will be define in children */
     font-weight: 600;
     font-size: 110%;
 }
 
-input:hover{
-    background-color: #000;
-}
-
-.f_ville{
-    size: 30;
+.f_ville{ /* specific style of the search input */
+    outline: none; /* no border when focus */
+    size: 30; /* size of the text area */
     padding: 10.5px;
-    border-width: 1px 0px 1px 0px;
+    border-width: 1px 0px 1px 0px; /* border on top and bottom */
     border-color: #F2F2F2;
     border-style: solid;
     color: #000;
     background-color: #FFF;
-    position: relative;
-    left: -3px;
+    position: relative; /* position relative in order to suppress gap btw label icon and search input */
+    left: -3px; /* move left of 3 px */
 }
 
-.f_button{
-    padding: 11.5px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+.f_ville::placeholder{ /* style for the suggestion text */
+    color: #000; /* black color for suggestion text */
+}
+
+.f_ville:focus{ /* not useful TO BE DELETED, test to change automatic behaviour background when filled ? */
+    background-color: grey;
+    border-color: #F2F2F2;
+}
+
+.f_button{ /* specific style of the search button */
+    padding: 11.5px; /* define padding to fit with other */
+    border-top-right-radius: 10px; /* define border radius to fit with left side of the search icon */
+    border-bottom-right-radius: 10px; /* define border radius to fit with left side of the search icon */
     background-color: #0065FC;
-    border: 0px solid #0065FC;
-    color: #FFF;
-    position: relative;
-    left: -6px;
+    border: 0; /* suppress border */
+    color: #FFF; /* white text */
+    position: relative; /* position relative in order to suppress gap btw label icon and search input */
+    left: -6px; /* move left of 2 x 3 px */
 }
 
-.filtres{
-    display: flex;
-    justify-content: flex-start;
-    margin: 0px 0px 0px 35px;
+.filtres{ /* 1st layer style for the filtres area */
+    display: flex; /* activation of flex-box */
+    justify-content: flex-start; /* position box at the left */
+    margin: 0px 0px 0px 35px; /* specific margin to position from the page left side */
 }
 
-.filtres h2{
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 85%;
+.filtres h2{ /* specific style for the title in the filtres area */
+    margin-top: auto; /* in order to center in the horizontal direction */
+    margin-bottom: auto; /* in order to center in the horizontal direction */
+    font-size: 80%;
     font-weight: 600;
-    padding-right: 20px;
+    margin-right: 20px; /* in order to set distance btw title and the group of filters */
 }
 
-ul{
-    display: flex;
+ul{ /* specific style for the group of filters in the filtres area */
+    display: flex; /* activation of flex-box */
     list-style-type: none; /* no puce */
     font-weight: 600;
     font-size: 80%;
-    padding: 0px;
+    padding: 0px; /* no padding, positioning in the child */
 }
 
-li span{
-    margin-right: -2px;
-    padding: 7px 12px 7px 30px;
-    border-top: 2px solid #F2F2F2;
-    border-right: 2px solid #F2F2F2;
-    border-bottom: 2px solid #F2F2F2;
+li span{ /* definition of the filter text style */
+    margin-right: 0px; /* in order to set distance btw title and the group of filters */
+    padding: 7.5px 15px 7px 27px; /* in order to set distance btw each filter and fit with icons (+relative position) */
+    /* definition of the grey border */
+    border-top: 1.5px solid #D9D9D9;
+    border-right: 1.5px solid #D9D9D9;
+    border-bottom: 1.5px solid #D9D9D9;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    /* position to fit icon with filters */
     position: relative;
-    left: -20px;
-    z-index: 1;
+    left: -17px;
+    z-index: 1; /* text below icon for border effect */
 }
 
-li i{
+li i{ /* definition of the global filter icon style */
     background-color: #DEEBFF;
-    padding: 10px;
-    border-radius: 25px;
-    position: relative;
-    z-index: 2;
+    padding: 10px; /* for background surface area */
+    border-radius: 25px; /* for background area shape */
+    position: relative; /* position to fit icon with filters */
+    z-index: 2; /* text below icon for border effect */
 }
 
-.economique i{
-    background-color: #DEEBFF;
-    padding: 10px 8px 10px 8px;
-    border-radius: 25px;
+.economique i{ /* definition of the specific economic filter icon style */
+    padding: 10px 8px 10px 8px; /* specific padding for background surface area in circle */
 }
 
-.familial i{
-    background-color: #DEEBFF;
-    padding: 10px 12px 10px 12px;
-    border-radius: 25px;
+.familial i{ /* definition of the specific familial filter icon style */
+    padding: 10px 12px 10px 12px; /* specific padding for background surface area in circle */
 }
 
-.info span{
-    margin-top: auto;
-    margin-bottom: auto;
-    position: relative;
-    top: 1px;
+li:hover i{ /* definition of the specific behaviour for filters icon style when pointer hover */
+    background-color: #F2F2F2; /* change background color */
+    color: grey; /* change icon color */
+    transition: 0.5s; /* transition duration */
+    /* Add relief effect */
+    /* ... */
 }
 
-.info i{
-    background-color: #FFF;
-    font-size: 80%;
-    border: 1px solid #F2F2F2;
-    padding: 4px 7px 4px 7px;
-    border-radius: 30px;
-    margin-right: 8px;
+li:hover span{ /* definition of the specific behaviour for filters icon style when pointer hover */
+    background-color: #F2F2F2; /* change background color */
+    border-color: #F2F2F2; /* change icon color */
+    transition: 0.5s; /* transition duration */
+    /* Add relief effect */
+    /* ... */
+}
+
+.info span{ /* Specific style for the text below filters */
+    margin-top: auto; /* in order to center in the horizontal direction */
+    margin-bottom: auto; /* in order to center in the horizontal direction */
+    position: relative; /* position to fit icon with text horizontally */
+    top: 1px; /* move top of 1 px */
+}
+
+.info i{ /* Specific style for the info icon */
+    font-size: 80%; /* size of the icon */
+    border: 1px solid #F2F2F2; /* set border for the circle around */
+    padding: 4px 7px 4px 7px; /* set padding for the size and shape of the circle around */
+    border-radius: 30px; /* set border radius for the shape of the circle around */
+    margin-right: 8px; /* position of the icon with the text */
 }
 
 /* #0065FC Bleu */
