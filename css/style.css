@@ -62,7 +62,7 @@ header{ /* header first layer style : use of flex-box */
     font-size: 85%;
     font-weight: 400;
     color: #000;
-    padding: 39px 30px 0px 20px;
+    padding: 37px 30px 0px 20px;
     text-decoration: none; /* No link default style */
 }
 
@@ -228,10 +228,13 @@ header{ /* header first layer style : use of flex-box */
 .filtre_list li i{ /* definition of the global filter icon style */
     color: #0065FC;
     background-color: #DEEBFF;
-    padding: 10px; /* for background surface area */
     border-radius: 25px; /* for background area shape */
     position: relative; /* position to fit icon with filters */
     z-index: 2; /* text below icon for border effect */
+}
+
+.other i{ /* definition of the specific economic filter icon style */
+    padding: 10px; /* specific padding for background surface area in circle */
 }
 
 .economique i{ /* definition of the specific economic filter icon style */
@@ -245,17 +248,18 @@ header{ /* header first layer style : use of flex-box */
 .filtre_list li:hover i{ /* definition of the specific behaviour for filters icon style when pointer hover */
     background-color: #F2F2F2; /* change background color */
     color: grey; /* change icon color */
-    transition: 0.5s; /* transition duration */
+    transition: 0.2s; /* transition duration */
     /* Add relief effect */
+    box-shadow: 0px 0px 5px 1px #D9D9D9;
     /* ... */
 }
 
 .filtre_list li:hover span{ /* definition of the specific behaviour for filters icon style when pointer hover */
     background-color: #F2F2F2; /* change background color */
     border-color: #F2F2F2; /* change icon color */
-    transition: 0.5s; /* transition duration */
+    transition: 0.2s; /* transition duration */
     /* Add relief effect */
-    /* ... */
+    box-shadow: inset 0px 0px 5px 1px #D9D9D9;
 }
 
 .info span{ /* Specific style for the text below filters */
@@ -321,6 +325,7 @@ header{ /* header first layer style : use of flex-box */
     border-radius: 15px;
     display:flex;
     flex-direction: column;
+    box-shadow: 0px 0px 10px 5px #D9D9D9;
 }
 
 .fig_hebergement img{ /* Hébergement cards : image Style */
@@ -391,6 +396,9 @@ header{ /* header first layer style : use of flex-box */
     font-weight: 600;
 }
 
+/* ========================================================================== */
+/* Definition of the 'Populaire' Section style */
+
 .a_populaire{ /* 1st layer of Populaire aside Style */
     margin: 15px 0px 15px 15px; /* position with margin */
     padding: 0; /* No padding */
@@ -406,29 +414,88 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .title_pop h2{ /* Populaire title Style */
-    margin: 30px auto 10px 20px; /* position with margin */
+    margin: 30px auto 10px 25px; /* position with margin */
     padding: 0; /* No padding */
     font-size: 95%;
 }
 
 .title_pop i{ /* Populaire title icon Style */
-    margin: 30px 20px 10px auto; /* position with margin */
+    margin: 30px 25px 10px auto; /* position with margin */
     padding: 0; /* No padding */
     font-size: 100%;
 }
 
-.div_populaire{ /* Populaire cards Style */
-    margin: 0; /* position with margin */
-    padding: 0; /* No padding */
-
-    border: 1px solid black;
+.div_populaire{ /* Populaire Area for cards Style */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 15px 0px 15px; /* position with margin */
 }
 
+.fig_populaire{ /* Populaire cards Style */
+    width: 230px;
+    height: 93px;
+    margin: 8px 10px 8px 10px; /* position with margin */
+    padding: 3px; /* No padding */
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 5px #D9D9D9;
+}
 
-/* ========================================================================== */
-/* Definition of the 'Populaire' Section style */
+.fig_populaire a{ /* Populaire Link Style  */
+    width: 100%;
+    height: 100%;
+    display:flex;
+    text-decoration: none; /* No link default style */
+    color:#000;
+}
 
+.fig_populaire img{ /* Populaire cards : image Style */
+    max-height: 100%;
+    width: 40%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
 
+.figcap_populaire{ /* Populaire cards : figure caption Style */
+    margin: 5px 10px 3px 10px;
+    padding: 0;
+}
+
+.h4_populaire{ /* Populaire cards : Name Style */
+    margin: 3px 0px 4px 0px;
+    padding: 0;
+    font-size: 70%;
+}
+
+.p_populaire{ /* Populaire cards : Text Price Style */
+    margin: 0;
+    padding: 0;
+    font-size: 60%;
+}
+
+.p_populaire .euros{ /* Populaire cards : euros Style */
+    font-weight: 600;
+}
+
+.l_i_populaire{ /* Populaire cards : Evaluation Style */
+    list-style-type: none; /* No puce */
+    margin-top: 22px;
+    padding: 0; /* No space around icons */
+    display: flex; /* flex-box for horizontal alinement */
+}
+
+.l_i_populaire i{ /* Populaire cards : Size of Stars */
+    font-size: 50%;
+}
+
+.l_i_populaire .etoile_bleu{ /* Hébergement cards : Bleu Star */
+    color: #0065FC;
+}
+
+.l_i_populaire .etoile_grise{ /* Hébergement cards : Grey Star */
+    color: #D9D9D9;
+}
 /* #0065FC Bleu */
 /* #DEEBFF bleu clair */
 /* #F2F2F2 gris */
