@@ -139,13 +139,13 @@ header{ /* header first layer style : use of flex-box */
     font-size: 70%;
 }
 
-form{ /* First layer style for the form */
+.form_recherche{ /* First layer style for the form */
     display: flex;
     margin: 9px 0px 9px 35px; /* margin to position the form with the above text and the filters section */
     font-size: 75%;
 }
 
-label i{ /* style of the search label icon */
+.form_recherche label i{ /* style of the search label icon */
     color: #000; /* black icon */
     font-size: 105%; /* size of the icon */
     background-color: #F2F2F2; /* grey background */
@@ -155,7 +155,7 @@ label i{ /* style of the search label icon */
     margin: 0px; /* no margin, position made in the form */
 }
 
-input{ /* 1st layer style of the two inputs */
+.form_recherche input{ /* 1st layer style of the two inputs */
     appearance: none; /* suppress default behaviour */
     margin: 0px; /* no margin, position will be define in children */
     font-weight: 600;
@@ -188,6 +188,7 @@ input{ /* 1st layer style of the two inputs */
 
 .filtres{ /* 1st layer style for the filtres area */
     display: flex; /* activation of flex-box */
+    flex-wrap: wrap; /* Add warp for responsive */
     justify-content: flex-start; /* position box at the left */
     margin: 0px 0px 0px 40px; /* specific margin to position from the page left side */
 }
@@ -200,15 +201,16 @@ input{ /* 1st layer style of the two inputs */
     margin-right: 20px; /* in order to set distance btw title and the group of filters */
 }
 
-ul{ /* specific style for the group of filters in the filtres area */
+.filtre_list{ /* specific style for the group of filters in the filtres area */
     display: flex; /* activation of flex-box */
+    flex-wrap: wrap; /* Add warp for responsive */
     list-style-type: none; /* no puce */
     font-weight: 600;
     font-size: 80%;
     padding: 0px; /* no padding, positioning in the child */
 }
 
-li span{ /* definition of the filter text style */
+.filtre_list li span{ /* definition of the filter text style */
     margin-right: 0px; /* in order to set distance btw title and the group of filters */
     padding: 7.5px 15px 7px 27px; /* in order to set distance btw each filter and fit with icons (+relative position) */
     /* definition of the grey border */
@@ -223,7 +225,7 @@ li span{ /* definition of the filter text style */
     z-index: 1; /* text below icon for border effect */
 }
 
-li i{ /* definition of the global filter icon style */
+.filtre_list li i{ /* definition of the global filter icon style */
     color: #0065FC;
     background-color: #DEEBFF;
     padding: 10px; /* for background surface area */
@@ -240,7 +242,7 @@ li i{ /* definition of the global filter icon style */
     padding: 10px 12px 10px 12px; /* specific padding for background surface area in circle */
 }
 
-li:hover i{ /* definition of the specific behaviour for filters icon style when pointer hover */
+.filtre_list li:hover i{ /* definition of the specific behaviour for filters icon style when pointer hover */
     background-color: #F2F2F2; /* change background color */
     color: grey; /* change icon color */
     transition: 0.5s; /* transition duration */
@@ -248,7 +250,7 @@ li:hover i{ /* definition of the specific behaviour for filters icon style when 
     /* ... */
 }
 
-li:hover span{ /* definition of the specific behaviour for filters icon style when pointer hover */
+.filtre_list li:hover span{ /* definition of the specific behaviour for filters icon style when pointer hover */
     background-color: #F2F2F2; /* change background color */
     border-color: #F2F2F2; /* change icon color */
     transition: 0.5s; /* transition duration */
