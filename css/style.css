@@ -274,6 +274,161 @@ header{ /* header first layer style : use of flex-box */
     margin-right: 8px; /* position of the icon with the text */
 }
 
+/* ========================================================================== */
+/* Definition of the 'Hebergement' Section style */
+
+.s_hebergement{ /* 1st layer of Hébergement section Style */
+    margin: 0; /* No margin */
+    padding: 0 35px 0 35px; /* No padding except for page border side with 35px */
+    display: flex; /* flex-box activation */
+    flex-wrap: wrap; /* go to line if no more place for child element */
+
+    border: 1px solid black;
+}
+
+.a_hebergement{ /* Hébergement article Style */
+    margin: 15px 15px 15px 0; /* position with margin for background */
+    padding: 0; /* No padding */
+    width: 65%; /* 2/3 for Hébergement, 1/3 for Populaire */
+    /*min-width: 660px;*/ /* Min size + responsive for normal screen */
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.a_hebergement h2{ /* Hébergement title Style */
+    margin: 30px auto 10px 25px; /* position with margin */
+    padding: 0; /* No padding */
+    font-size: 95%;
+}
+
+.div_hebergement{ /* Hébergement Area for cards Style  */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 15px 0px 15px; /* position with margin */
+}
+
+.div_hebergement a{ /* Hébergement Link Style  */
+    text-decoration: none; /* No link default style */
+    color:#000;
+}
+
+.fig_hebergement{ /* Hébergement cards Style */
+    width: 163px;
+    height: 130px;
+    margin: 8px 10px 8px 10px; /* position with margin */
+    padding: 3px; /* No padding */
+    background-color: #FFF;
+    border-radius: 15px;
+    display:flex;
+    flex-direction: column;
+}
+
+.fig_hebergement img{ /* Hébergement cards : image Style */
+    max-width: 100%;
+    height: 63%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.figcap_hebergement{ /* Hébergement cards : figure caption Style */
+    margin: 0px 10px 3px 10px;
+    padding: 0;
+}
+
+.h4_hebergement{ /* Hébergement cards : Name Style */
+    margin: 3px 0px 4px 0px;
+    padding: 0;
+    font-size: 70%;
+}
+
+.p_hebergement{ /* Hébergement cards : Text Price Style */
+    margin: 0;
+    padding: 0;
+    font-size: 60%;
+}
+
+.p_hebergement .low_price{ /* Hébergement cards : Low Price Style */
+    font-weight: 600;
+}
+
+.p_hebergement .euros{ /* Hébergement cards : Low Price Style */
+    font-weight: 600;
+}
+
+.p_hebergement .price{ /* Hébergement cards : Normal Price Style */
+    font-weight: 400;
+}
+
+.l_i_hebergement{ /* Hébergement cards : Evaluation Style */
+    list-style-type: none; /* No puce */
+    margin: 0;
+    padding: 0; /* No space around icons */
+    display: flex; /* flex-box for horizontal alinement */
+}
+
+.l_i_hebergement i{ /* Hébergement cards : Size of Stars */
+    font-size: 60%;
+}
+
+.l_i_hebergement .etoile_bleu{ /* Hébergement cards : Bleu Star */
+    color: #0065FC;
+}
+
+.l_i_hebergement .etoile_grise{ /* Hébergement cards : Grey Star */
+    color: #D9D9D9;
+}
+
+.h3_more a{ /* Hébergement end title Style */
+    text-decoration: none; /* No link default style */
+    color:#000;
+}
+
+.h3_more{ /* Hébergement end title Style */
+    margin: 15px auto 30px 25px; /* position with margin */
+    padding: 0; /* No padding */
+    font-size: 75%;
+    font-weight: 600;
+}
+
+.a_populaire{ /* 1st layer of Populaire aside Style */
+    margin: 15px 0px 15px 15px; /* position with margin */
+    padding: 0; /* No padding */
+    width: 31%; /* 2/3 for Hébergement, 1/3 for Populaire */
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.title_pop{ /* Populaire title area Style */
+    margin: 0; /* position with margin */
+    padding: 0; /* No padding */
+    display: flex; /* Auto horizontal positionning with flex-box*/
+}
+
+.title_pop h2{ /* Populaire title Style */
+    margin: 30px auto 10px 20px; /* position with margin */
+    padding: 0; /* No padding */
+    font-size: 95%;
+}
+
+.title_pop i{ /* Populaire title icon Style */
+    margin: 30px 20px 10px auto; /* position with margin */
+    padding: 0; /* No padding */
+    font-size: 100%;
+}
+
+.div_populaire{ /* Populaire cards Style */
+    margin: 0; /* position with margin */
+    padding: 0; /* No padding */
+
+    border: 1px solid black;
+}
+
+
+/* ========================================================================== */
+/* Definition of the 'Populaire' Section style */
+
+
 /* #0065FC Bleu */
 /* #DEEBFF bleu clair */
 /* #F2F2F2 gris */
