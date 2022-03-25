@@ -518,8 +518,6 @@ header{ /* header first layer style : use of flex-box */
     width: 94%; /* 100% - 2 x 3% (padding) due to content-box */
     margin: 0; /* No margin */
     padding: 0 3% 0 3%; /* No padding except for page border side with 35px */
-
-    border: 1px solid blue;
 }
 
 .h2_activites_title{ /* Activités title Style */
@@ -527,8 +525,6 @@ header{ /* header first layer style : use of flex-box */
     padding: 0; /* No padding */
     width: 100%;
     font-size: 95%;
-
-    border: 1px solid red;
 }
 
 .div_activites{ /* Activités area Style */
@@ -539,72 +535,53 @@ header{ /* header first layer style : use of flex-box */
     height: 305px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: space-between;
+    justify-content: space-between; /* on top and on bottom */
+    align-content: space-between; /* Use of align-CONTENT instead of align-ITEMS (only one line)
+    to align on left and on right because more than one line */
     flex-wrap: wrap;
-
-    border: 1px solid red;
 }
 
-.fig_activites_portrait{ /* activites cards Style portrait */
-    width: 205px;
+.fig_activites:nth-child(1),
+.fig_activites:nth-child(4) { /* activites cards Style portrait */
     height: 305px;
-    margin: 0px; /* No margin */
-    padding: 0px; /* No padding */
-    border-radius: 15px;
-    box-shadow: 0px 5px 10px 5px #F2F2F2;
 }
-.fig_activites_portrait img{ /* Activités cards : image Style portrait */
-    width: 100%;
+.fig_activites:nth-child(1) img,
+.fig_activites:nth-child(4) img{ /* Activités cards : image Style portrait */
     height: 265px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
-.fig_activites_paysage_big{ /* activites cards Style paysage big */
-    width: 205px;
+.fig_activites:nth-child(2){ /* activites cards Style paysage big */
     height: 165px;
-    margin: 0px; /* No margin */
-    padding: 0px; /* No padding */
-    border-radius: 15px;
-    box-shadow: 0px 5px 10px 5px #F2F2F2;
 }
-.fig_activites_paysage_big img{ /* Activités cards : image Style paysage big */
-    width: 100%;
+.fig_activites:nth-child(2) img{ /* Activités cards : image Style paysage big */
     height: 125px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
-.fig_activites_paysage_norm{ /* activites cards Style paysage normal */
-    width: 205px;
-    height: 140px;
-    margin: 0px; /* No margin */
-    padding: 0px; /* No padding */
-    border-radius: 15px;
-    box-shadow: 0px 5px 10px 5px #F2F2F2;
-}
-.fig_activites_paysage_norm img{ /* Activités cards : image Style paysage normal */
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.fig_activites_paysage_small{ /* activites cards Style paysage small */
-    width: 205px;
+.fig_activites:nth-child(3){ /* activites cards Style paysage small */
     height: 115px;
+}
+.fig_activites:nth-child(3) img{ /* Activités cards : image Style paysage small */
+    height: 75px;
+}
+
+.fig_activites:nth-child(5),
+.fig_activites:nth-child(6){ /* activites cards Style paysage normal */
+    height: 140px;
+}
+.fig_activites:nth-child(5) img,
+.fig_activites:nth-child(6) img{ /* Activités cards : image Style paysage normal */
+    height: 100px;
+}
+
+.fig_activites { /* activites cards Style : complement  */
+    width: 205px;
     margin: 0px; /* No margin */
     padding: 0px; /* No padding */
     border-radius: 15px;
     box-shadow: 0px 5px 10px 5px #F2F2F2;
 }
-.fig_activites_paysage_small img{ /* Activités cards : image Style paysage small */
+.fig_activites img{ /* Activités cards image Style : complement  */
     width: 100%;
-    height: 75px;
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -618,14 +595,6 @@ header{ /* header first layer style : use of flex-box */
     align-items: flex-start;
     text-decoration: none; /* No link default style */
     color:#000;
-}
-
-.fig_activites_portrait img{ /* Activités cards : image Style */
-    max-width: 100%;
-    height: 265px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 .figcap_activite{ /* Activités cards : figure caption Style */
