@@ -9,13 +9,14 @@
 /* Definition of the Google font polices */
 body{
     font-family: "Raleway", Verdana, sans-serif;
+    display: flex;
 }
 
 /* ========================================================================== */
 /* Definition of the bloc_page style */
 /* Computer screen ; standard style and other with 'viewport' param in html */
 #bloc_page{
-    max-width: 992px;
+    max-width: 1400px;
     margin: auto;
 }
 
@@ -40,6 +41,8 @@ body{
 /* ========================================================================== */
 /* Definition of the Header style */
 header{ /* header first layer style : use of flex-box */
+    max-width: 1200px;
+    width: 100%;
     display: flex; /* use of flexbox */
     justify-content: space-between;
     align-items: center;
@@ -127,6 +130,11 @@ header{ /* header first layer style : use of flex-box */
 
 /* ========================================================================== */
 /* Definition of the 'Recherche' Section style */
+.s_recherche{ /* First layer style */
+    max-width: 1200px;
+    width: 100%;
+}
+
 .s_recherche h1{ /* First title style */
     margin: 0px 0px 0px 35px; /* margin left to position the text and 0 for other */
     font-size: 95%;
@@ -282,17 +290,20 @@ header{ /* header first layer style : use of flex-box */
 /* Definition of the 'Hebergement' Section style */
 
 .s_hebergement{ /* 1st layer of Hébergement section Style */
+    max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
+    width: 94%; /* 100% - 2 x 3% (padding) due to content-box */
     margin: 0; /* No margin */
-    padding: 0 35px 0 35px; /* No padding except for page border side with 35px */
+    padding: 0 3% 0 3%; /* No padding except for page border side with 35px */
     display: flex; /* flex-box activation */
+    justify-content: space-between;
     flex-wrap: wrap; /* go to line if no more place for child element */
 }
 
 .a_hebergement{ /* Hébergement article Style */
-    margin: 15px 15px 15px 0; /* position with margin for background */
+    margin: 15px 1% 15px 0; /* position with margin for background */
     padding: 0; /* No padding */
-    width: 65%; /* 2/3 for Hébergement, 1/3 for Populaire */
-    /*min-width: 660px;*/ /* Min size + responsive for normal screen */
+    width: 66%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 2% (margin) = 65% */
+    min-width: 550px; /* Min size + responsive for normal screen */
     background-color: #F2F2F2;
     border-radius: 20px;
 }
@@ -306,24 +317,26 @@ header{ /* header first layer style : use of flex-box */
 .div_hebergement{ /* Hébergement Area for cards Style  */
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 15px 0px 15px; /* position with margin */
-}
-
-.div_hebergement a{ /* Hébergement Link Style  */
-    text-decoration: none; /* No link default style */
-    color:#000;
+    margin: 0 15px 0 15px; /* position with margin */
 }
 
 .fig_hebergement{ /* Hébergement cards Style */
-    width: 163px;
+    width: 30%;
     height: 130px;
-    margin: 8px 10px 8px 10px; /* position with margin */
-    padding: 3px; /* No padding */
+    margin: 8px 1% 8px 1%; /* position with margin */
+    padding: 0.5%; /* No padding */
     background-color: #FFF;
     border-radius: 15px;
+    box-shadow: 0px 5px 10px 5px #D9D9D9;
+}
+
+.div_hebergement a{ /* Hébergement Link Style  */
+    width: 100%;
+    height: 100%;    
+    text-decoration: none; /* No link default style */
+    color:#000;
     display:flex;
     flex-direction: column;
-    box-shadow: 0px 0px 10px 5px #D9D9D9;
 }
 
 .fig_hebergement img{ /* Hébergement cards : image Style */
@@ -396,11 +409,11 @@ header{ /* header first layer style : use of flex-box */
 
 /* ========================================================================== */
 /* Definition of the 'Populaire' Section style */
-
 .a_populaire{ /* 1st layer of Populaire aside Style */
-    margin: 15px 0px 15px 15px; /* position with margin */
+    margin: 15px 0 15px 2%; /* position with margin for background */
     padding: 0; /* No padding */
-    width: 31%; /* 2/3 for Hébergement, 1/3 for Populaire */
+    width: 31%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 2% (margin) = 31% */
+    min-width: 250px; /* Min size + responsive for normal screen */
     background-color: #F2F2F2;
     border-radius: 20px;
 }
@@ -426,17 +439,17 @@ header{ /* header first layer style : use of flex-box */
 .div_populaire{ /* Populaire Area for cards Style */
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 15px 0px 15px; /* position with margin */
+    margin: 0px 22px; /* position with margin */
 }
 
 .fig_populaire{ /* Populaire cards Style */
-    width: 230px;
+    width: 95.7%;
     height: 93px;
-    margin: 8px 10px 8px 10px; /* position with margin */
-    padding: 3px; /* No padding */
+    margin: 8px 1.5% 8px 1.5%; /* position with margin */
+    padding: 1.3%; /* No padding */
     background-color: #FFF;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px 5px #D9D9D9;
+    box-shadow: 0px 5px 10px 5px #D9D9D9;
 }
 
 .fig_populaire a{ /* Populaire Link Style  */
@@ -458,16 +471,19 @@ header{ /* header first layer style : use of flex-box */
 .figcap_populaire{ /* Populaire cards : figure caption Style */
     margin: 5px 10px 3px 10px;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .h4_populaire{ /* Populaire cards : Name Style */
-    margin: 3px 0px 4px 0px;
+    margin: 2px 0;
     padding: 0;
     font-size: 70%;
 }
 
 .p_populaire{ /* Populaire cards : Text Price Style */
-    margin: 0;
+    margin: 2px 0;
     padding: 0;
     font-size: 60%;
 }
@@ -478,7 +494,7 @@ header{ /* header first layer style : use of flex-box */
 
 .l_i_populaire{ /* Populaire cards : Evaluation Style */
     list-style-type: none; /* No puce */
-    margin-top: 22px;
+    margin: auto 0 0 0;
     padding: 0; /* No space around icons */
     display: flex; /* flex-box for horizontal alinement */
 }
@@ -496,30 +512,38 @@ header{ /* header first layer style : use of flex-box */
 }
 
 /* ========================================================================== */
-/* Definition of the 'Hebergement' Section style */
-
-.s_activites{ /* 1st layer of Hébergement section Style */
+/* Definition of the 'Activités' Section style */
+.s_activites{ /* 1st layer of Activités section Style */
+    max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
+    width: 94%; /* 100% - 2 x 3% (padding) due to content-box */
     margin: 0; /* No margin */
-    padding: 0 35px 0 35px; /* No padding except for page border side with 35px */
+    padding: 0 3% 0 3%; /* No padding except for page border side with 35px */
+
+    border: 1px solid blue;
 }
 
 .h2_activites_title{ /* Activités title Style */
-    margin: 25px auto 15px 0; /* position with margin for background */
+    margin: 25px 0 15px 0; /* position with margin for background */
     padding: 0; /* No padding */
-    width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire */
+    width: 100%;
     font-size: 95%;
+
+    border: 1px solid red;
 }
 
 .div_activites{ /* Activités area Style */
-    margin: 5px 15px 15px 0; /* position with margin for background */
+    margin: 5px 0 15px 0; /* position with margin for background */
     padding: 0; /* No padding */
-    width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire */
+    width: 100%;
+    min-width: 850px; /* 992 - 2 x 3% (padding) = 932 */
     height: 305px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
     flex-wrap: wrap;
+
+    border: 1px solid red;
 }
 
 .fig_activites_portrait{ /* activites cards Style portrait */
@@ -633,20 +657,20 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .footer h2{ /* footer titles style */
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-size: 80%;
 }
 
 .footer ul{ /* footer liste style */
-    margin: 7px 0px 4px 0px;
-    padding: 0px;
+    margin: 7px 0 4px 0;
+    padding: 0;
     list-style-type: none; /* No puce */
 }
 
 .footer li{ /* footer liste items style */
     margin: 0;
-    padding: 1.5px 0px;
+    padding: 1.5px 0;
 }
 
 .link_footer{ /* Footer links style */
