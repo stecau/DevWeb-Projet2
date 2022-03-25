@@ -501,8 +501,6 @@ header{ /* header first layer style : use of flex-box */
 .s_activites{ /* 1st layer of Hébergement section Style */
     margin: 0; /* No margin */
     padding: 0 35px 0 35px; /* No padding except for page border side with 35px */
-
-    border: 1px solid black;
 }
 
 .h2_activites_title{ /* Activités title Style */
@@ -510,8 +508,6 @@ header{ /* header first layer style : use of flex-box */
     padding: 0; /* No padding */
     width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire */
     font-size: 95%;
-
-    /*border: 1px solid red;*/
 }
 
 .div_activites{ /* Activités area Style */
@@ -524,8 +520,6 @@ header{ /* header first layer style : use of flex-box */
     justify-content: space-between;
     align-items: space-between;
     flex-wrap: wrap;
-
-    /*border: 1px solid blueviolet;*/
 }
 
 .fig_activites_portrait{ /* activites cards Style portrait */
@@ -623,7 +617,43 @@ header{ /* header first layer style : use of flex-box */
     font-size: 70%;
 }
 
+/* ========================================================================== */
+/* Definition of the 'Hebergement' Section style */
 
+.footer{ /* 1st layer Footer style */
+    margin-top: 40px;
+    padding: 32px 35px 30px 35px;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer div{ /* sub-aera of footer style */
+    width: 33%;
+}
+
+.footer h2{ /* footer titles style */
+    margin: 0px;
+    padding: 0px;
+    font-size: 80%;
+}
+
+.footer ul{ /* footer liste style */
+    margin: 7px 0px 4px 0px;
+    padding: 0px;
+    list-style-type: none; /* No puce */
+}
+
+.footer li{ /* footer liste items style */
+    margin: 0;
+    padding: 1.5px 0px;
+}
+
+.link_footer{ /* Footer links style */
+    text-decoration: none; /* No link default style */
+    color:#000;
+    font-size: 70%;
+}
 /* #0065FC Bleu */
 /* #DEEBFF bleu clair */
 /* #F2F2F2 gris */
