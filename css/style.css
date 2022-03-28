@@ -9,15 +9,15 @@
 /* Definition of the Google font polices */
 body{
     font-family: "Raleway", Verdana, sans-serif;
-    display: flex;
+    display: flex; /* In order to center bloc_page */
 }
 
 /* ========================================================================== */
 /* Definition of the bloc_page style */
 /* Computer screen ; standard style and other with 'viewport' param in html */
 #bloc_page{
-    max-width: 1400px;
-    margin: auto;
+    width: 100%; /* To get some space with the screen border */
+    margin: auto; /* Center bloc_page in combination with display: flex */
 }
 
 /* Tablette screen */
@@ -30,42 +30,42 @@ body{
 }*/
 
 /* Phone screen ; standard style */
-/*@media screen and (max-width: 767px)
+/* @media screen and (max-width: 767px)
 {
     #bloc_page{
-        width: auto;
-        margin: auto;
+        width: 100%;
     }
-}*/
+} */
 
 /* ========================================================================== */
 /* Definition of the Header style */
 header{ /* header first layer style : use of flex-box */
-    max-width: 1200px;
-    width: 100%;
+    /* max-width: 1200px; */
+    width: 100%; /* Use total of the Bloc_page width */
     display: flex; /* use of flexbox */
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Main direction with same space between blocks */
+    align-items: flex-start;
+    /* align-items: center; second direction : block centered */
 }
 
 .logo_header{ /* Style of the image for the logo */
-    width: 65px;
-    margin: 32px 0px 30px 45px;
+    width: 65px; /* Define size of the logo */
+    margin: auto 0 auto 45px; /* Vertical = center and 45px from left border */
 }
 
-.menu ul /* Style of the nav menu */
-{
+.menu ul{ /* Style of the nav menu */
     list-style-type: none; /* no puce */
     display: flex; /* use of flexbox for li */
-    margin: 0px 25px 0px 25px; /* 25px from page border */
+    margin: 0px 25px; /* 25px from page border ; nothing in vertical direction */
+    padding: 37px 0px 30px 0px; /* define heigth and vertical position ; 25px (margin) + 20px = 45px from border */
 }
 
 .menu a /* Style of the link in the nav menu */
 {
-    font-size: 85%;
-    font-weight: 400;
+    font-size: 70%; /* size of the text */
+    font-weight: 400; /* Normal thickness */
     color: #000;
-    padding: 37px 30px 0px 20px;
+    padding: 39px 30px 0px 20px; /* size = 'parent size' + '2px for border when hover' for top border in top page border */
     text-decoration: none; /* No link default style */
 }
 
@@ -91,7 +91,7 @@ header{ /* header first layer style : use of flex-box */
     }
 
     .logo_header{ /* Style of the image for the logo */
-        width: 100px;
+        width: 100px; /* Define size of the logo */
         margin: 25px auto 30px auto; /* Reduction of the margin in the left */
         text-align: center; /* center the text */
         padding-left: 25px; /* correction gap in order to center picture */
@@ -107,8 +107,8 @@ header{ /* header first layer style : use of flex-box */
     {
         width: 100%; /* Set width 100% to fill space */
         margin: auto; /* margin auto to center */
-        padding: 0px; /* no padding for border when hover */
-        display: flex; /* to position the link */
+        padding: 0px; /* no padding for bottom border */
+        display: flex; /* to position the links */
         justify-content: stretch; /* to fill the place */
     }
 
@@ -117,7 +117,7 @@ header{ /* header first layer style : use of flex-box */
         width: 100%; /* Set width 100% to fill space */
         text-align: center; /* Get text centered */
         font-size: 140%;
-        padding: 5px 0px 15px 0px; /* top and bottom padding to position and border distance */
+        padding: 5px 5px 15px 5px; /* top and bottom padding to position and border distance */
         border-bottom: 3px solid #F2F2F2; /* set grey border for non-hover link */
     }
 
@@ -131,33 +131,32 @@ header{ /* header first layer style : use of flex-box */
 /* ========================================================================== */
 /* Definition of the 'Recherche' Section style */
 .s_recherche{ /* First layer style */
-    max-width: 1200px;
     width: 100%;
 }
 
 .s_recherche h1{ /* First title style */
-    margin: 0px 0px 0px 35px; /* margin left to position the text and 0 for other */
-    font-size: 95%;
-    font-weight: 600;
+    margin: 0px 35px; /* margin left and right to position the text and 0 for other */
+    font-size: 95%; /* Size of text */
+    font-weight: 600; /* Bold style for text */
 }
 
-.s_recherche p{ /* Second line style */
-    margin: 0px 0px 0px 35px; /* margin left to position the text and 0 for other */
+.s_recherche > p{ /* Second line + info line style */
+    margin: 0px 35px; /* margin left and right to position the text and 0 for other */
     padding: 5px 0px 5px 0px; /* padding top and bottom to position the text and 0 for other */
-    font-size: 70%;
+    font-size: 70%; /* Size of text */
 }
 
 .form_recherche{ /* First layer style for the form */
-    display: flex;
-    margin: 9px 0px 9px 35px; /* margin to position the form with the above text and the filters section */
-    font-size: 75%;
+    display: flex; /* Flexbox activated for the form */
+    margin: 9px 35px; /* margin to position the form with the above text and the filters section */
+    font-size: 75%; /* Text size for the form */
 }
 
-.form_recherche label i{ /* style of the search label icon */
+.f_icon_loc{ /* style of the search label icon */
     color: #000; /* black icon */
     font-size: 105%; /* size of the icon */
     background-color: #F2F2F2; /* grey background */
-    padding: 13px; /* padding to define the size of the background */
+    padding: 11px 13px; /* padding to define the size of the background and the form height*/
     border-top-left-radius: 10px; /* left border radius to round the background */
     border-bottom-left-radius: 10px; /* left border radius to round the background */
     margin: 0px; /* no margin, position made in the form */
@@ -165,20 +164,21 @@ header{ /* header first layer style : use of flex-box */
 
 .form_recherche input{ /* 1st layer style of the two inputs */
     appearance: none; /* suppress default behaviour */
-    margin: 0px; /* no margin, position will be define in children */
+    margin: 0px; /* no margin, position define with flex */
     font-weight: 600;
     font-size: 100%;
 }
 
 .f_ville{ /* specific style of the search input */
     outline: none; /* no border when focus */
-    size: 30; /* size of the text area */
-    padding: 10.5px;
-    border-width: 1px 0px 1px 0px; /* border on top and bottom */
-    border-color: #F2F2F2;
-    border-style: solid;
+    width: 140px; /* size of the text area */
+    padding: 0 10px; /* automatic height with flex ; horizontal padding 10px */
     color: #000;
     background-color: #FFF;
+    /* border on top and bottom */
+    border-width: 1px 0px 1px 0px;
+    border-color: #F2F2F2;
+    border-style: solid;
 }
 
 .f_ville::placeholder{ /* style for the suggestion text */
@@ -186,7 +186,7 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .f_button{ /* specific style of the search button */
-    padding: 10px; /* define padding to fit with other */
+    padding: 0 15px; /* automatic height with flex ; horizontal padding 10px */
     border-top-right-radius: 10px; /* define border radius to fit with left side of the search icon */
     border-bottom-right-radius: 10px; /* define border radius to fit with left side of the search icon */
     background-color: #0065FC;
@@ -198,10 +198,10 @@ header{ /* header first layer style : use of flex-box */
     display: flex; /* activation of flex-box */
     flex-wrap: wrap; /* Add warp for responsive */
     justify-content: flex-start; /* position box at the left */
-    margin: 0px 0px 0px 40px; /* specific margin to position from the page left side */
+    margin: 0px 35px 0px 40px; /* specific margin to position from the page left side */
 }
 
-.filtres h2{ /* specific style for the title in the filtres area */
+.filtres_title{ /* specific style for the title in the filtres area */
     margin-top: auto; /* in order to center in the horizontal direction */
     margin-bottom: auto; /* in order to center in the horizontal direction */
     font-size: 80%;
@@ -212,10 +212,18 @@ header{ /* header first layer style : use of flex-box */
 .filtre_list{ /* specific style for the group of filters in the filtres area */
     display: flex; /* activation of flex-box */
     flex-wrap: wrap; /* Add warp for responsive */
+    justify-content: flex-start; /* No move in the first line */
+    align-content: space-between; /* Vertical position if several line */
     list-style-type: none; /* no puce */
     font-weight: 600;
     font-size: 80%;
     padding: 0px; /* no padding, positioning in the child */
+    margin-top: auto; /* in order to center in the horizontal direction */
+    margin-bottom: auto; /* in order to center in the horizontal direction */
+}
+
+.filtre_list li{ /* definition of the filter text style */
+    margin: 5px 0px; /* Get vertical space if several lines */
 }
 
 .filtre_list li span{ /* definition of the filter text style */
@@ -259,12 +267,11 @@ header{ /* header first layer style : use of flex-box */
     transition: 0.2s; /* transition duration */
     /* Add relief effect */
     box-shadow: 0px 0px 5px 1px #D9D9D9;
-    /* ... */
 }
 
 .filtre_list li:hover span{ /* definition of the specific behaviour for filters icon style when pointer hover */
     background-color: #F2F2F2; /* change background color */
-    border-color: #F2F2F2; /* change icon color */
+    border-color: #FFF; /* change border color */
     transition: 0.2s; /* transition duration */
     /* Add relief effect */
     box-shadow: inset 0px 0px 5px 1px #D9D9D9;
@@ -290,7 +297,7 @@ header{ /* header first layer style : use of flex-box */
 /* Definition of the 'Hebergement' Section style */
 
 .s_hebergement{ /* 1st layer of Hébergement section Style */
-    max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
+    /*max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
     width: 94%; /* 100% - 2 x 3% (padding) due to content-box */
     margin: 0; /* No margin */
     padding: 0 3% 0 3%; /* No padding except for page border side with 35px */
@@ -302,7 +309,7 @@ header{ /* header first layer style : use of flex-box */
 .a_hebergement{ /* Hébergement article Style */
     margin: 15px 1% 15px 0; /* position with margin for background */
     padding: 0; /* No padding */
-    width: 66%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 2% (margin) = 65% */
+    width: 66%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 1% (margin) = 66% */
     min-width: 550px; /* Min size + responsive for normal screen */
     background-color: #F2F2F2;
     border-radius: 20px;
@@ -321,16 +328,16 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .fig_hebergement{ /* Hébergement cards Style */
-    width: 30%;
-    height: 130px;
-    margin: 8px 1% 8px 1%; /* position with margin */
+    width: 28%; /* 1/3 par cards : 33 - 5 = 28% ( 5 = 2 x 2% margin + 2 x 0.5% padding )*/
+    height: 130px; /* Fixed height to 130px in order to adjust image size */
+    margin: 8px 2% 8px 2%; /* position with margin */
     padding: 0.5%; /* No padding */
     background-color: #FFF;
     border-radius: 15px;
     box-shadow: 0px 5px 10px 5px #D9D9D9;
 }
 
-.div_hebergement a{ /* Hébergement Link Style  */
+.fig_hebergement a{ /* Hébergement Link Style  */
     width: 100%;
     height: 100%;    
     text-decoration: none; /* No link default style */
@@ -340,20 +347,20 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .fig_hebergement img{ /* Hébergement cards : image Style */
-    max-width: 100%;
-    height: 63%;
-    object-fit: cover;
+    max-width: 100%; /* Define image width */
+    height: 63%;  /* Define image height */
+    object-fit: cover; /* keep image proportion and adjust with image area */
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
 
 .figcap_hebergement{ /* Hébergement cards : figure caption Style */
-    margin: 0px 10px 3px 10px;
+    margin: 0px 10px 3px 10px; /* Position of the caption */
     padding: 0;
 }
 
 .h4_hebergement{ /* Hébergement cards : Name Style */
-    margin: 3px 0px 4px 0px;
+    margin: 3px 0px 4px 0px;  /* Position of the Name */
     padding: 0;
     font-size: 70%;
 }
@@ -365,15 +372,15 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .p_hebergement .low_price{ /* Hébergement cards : Low Price Style */
-    font-weight: 600;
+    font-weight: 600; /* Bold thickness */
 }
 
 .p_hebergement .euros{ /* Hébergement cards : Low Price Style */
-    font-weight: 600;
+    font-weight: 600; /* Bold thickness */
 }
 
 .p_hebergement .price{ /* Hébergement cards : Normal Price Style */
-    font-weight: 400;
+    font-weight: 400; /* Normal thickness */
 }
 
 .l_i_hebergement{ /* Hébergement cards : Evaluation Style */
@@ -384,7 +391,7 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .l_i_hebergement i{ /* Hébergement cards : Size of Stars */
-    font-size: 60%;
+    font-size: 55%; /* Icon size */
 }
 
 .l_i_hebergement .etoile_bleu{ /* Hébergement cards : Bleu Star */
@@ -401,7 +408,7 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .h3_more{ /* Hébergement end title Style */
-    margin: 15px auto 30px 25px; /* position with margin */
+    margin: 15px auto 30px 35px; /* position with margin */
     padding: 0; /* No padding */
     font-size: 75%;
     font-weight: 600;
@@ -443,8 +450,8 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .fig_populaire{ /* Populaire cards Style */
-    width: 95.7%;
-    height: 93px;
+    width: 95.7%; /* Size of the card with % of margin and padding : 100 - 4.3 = 95.7% */
+    height: 93px; /* Fixed height to 93px */
     margin: 8px 1.5% 8px 1.5%; /* position with margin */
     padding: 1.3%; /* No padding */
     background-color: #FFF;
@@ -461,29 +468,29 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .fig_populaire img{ /* Populaire cards : image Style */
-    max-height: 100%;
-    width: 40%;
-    object-fit: cover;
+    max-height: 100%; /* Define image height */
+    width: 40%; /* Define image width */
+    object-fit: cover; /* keep image proportion and adjust with image area */
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
 
 .figcap_populaire{ /* Populaire cards : figure caption Style */
-    margin: 5px 10px 3px 10px;
+    margin: 5px 10px 3px 10px; /* Position of the caption in card */
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: flex; /* Active flexbox */
+    flex-direction: column; /* Vertical alignement */
+    justify-content: space-between; /* Constant space between items combined with margin-top auto on stars incons */
 }
 
 .h4_populaire{ /* Populaire cards : Name Style */
-    margin: 2px 0;
+    margin: 2px 0; /* Position title */
     padding: 0;
     font-size: 70%;
 }
 
 .p_populaire{ /* Populaire cards : Text Price Style */
-    margin: 2px 0;
+    margin: 2px 0; /* Position text */
     padding: 0;
     font-size: 60%;
 }
@@ -494,9 +501,9 @@ header{ /* header first layer style : use of flex-box */
 
 .l_i_populaire{ /* Populaire cards : Evaluation Style */
     list-style-type: none; /* No puce */
-    margin: auto 0 0 0;
+    margin: auto 0 0 0; /* To keep stars on bottom */
     padding: 0; /* No space around icons */
-    display: flex; /* flex-box for horizontal alinement */
+    display: flex; /* flex-box for horizontal alignement */
 }
 
 .l_i_populaire i{ /* Populaire cards : Size of Stars */
@@ -514,25 +521,25 @@ header{ /* header first layer style : use of flex-box */
 /* ========================================================================== */
 /* Definition of the 'Activités' Section style */
 .s_activites{ /* 1st layer of Activités section Style */
-    max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
+    /* max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
     width: 94%; /* 100% - 2 x 3% (padding) due to content-box */
     margin: 0; /* No margin */
     padding: 0 3% 0 3%; /* No padding except for page border side with 35px */
 }
 
 .h2_activites_title{ /* Activités title Style */
-    margin: 25px 0 15px 0; /* position with margin for background */
+    margin: 25px 0 15px 0; /* position with margin */
     padding: 0; /* No padding */
     width: 100%;
     font-size: 95%;
 }
 
 .div_activites{ /* Activités area Style */
-    margin: 5px 0 15px 0; /* position with margin for background */
+    margin: 5px 0 15px 0; /* position with margin */
     padding: 0; /* No padding */
     width: 100%;
-    min-width: 850px; /* 992 - 2 x 3% (padding) = 932 */
-    height: 305px;
+    /*min-width: 850px; /* 992 - 2 x 3% (padding) = 932 */
+    height: 305px; /* Fixed height to 305px */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* on top and on bottom */
@@ -543,46 +550,46 @@ header{ /* header first layer style : use of flex-box */
 
 .fig_activites:nth-child(1),
 .fig_activites:nth-child(4) { /* activites cards Style portrait */
-    height: 305px;
+    height: 305px; /* Fixed height to cards order number 1 and 4 */
 }
 .fig_activites:nth-child(1) img,
 .fig_activites:nth-child(4) img{ /* Activités cards : image Style portrait */
-    height: 265px;
+    height: 265px; /* Fixed height to image in cards order number 1 and 4 */
 }
 
 .fig_activites:nth-child(2){ /* activites cards Style paysage big */
-    height: 165px;
+    height: 165px; /* Fixed height to cards order number 2 */
 }
 .fig_activites:nth-child(2) img{ /* Activités cards : image Style paysage big */
-    height: 125px;
+    height: 125px; /* Fixed height to image in cards order number 2 */
 }
 
 .fig_activites:nth-child(3){ /* activites cards Style paysage small */
-    height: 115px;
+    height: 115px; /* Fixed height to cards order number 3 */
 }
 .fig_activites:nth-child(3) img{ /* Activités cards : image Style paysage small */
-    height: 75px;
+    height: 75px; /* Fixed height to image in cards order number 3 */
 }
 
 .fig_activites:nth-child(5),
 .fig_activites:nth-child(6){ /* activites cards Style paysage normal */
-    height: 140px;
+    height: 140px; /* Fixed height to cards order number 5 and 6 */
 }
 .fig_activites:nth-child(5) img,
 .fig_activites:nth-child(6) img{ /* Activités cards : image Style paysage normal */
-    height: 100px;
+    height: 100px; /* Fixed height to image in cards order number 5 and 6 */
 }
 
 .fig_activites { /* activites cards Style : complement  */
-    width: 205px;
+    width: 23%; /* 4 cards in a line => around 25% but substract margin and padding */
     margin: 0px; /* No margin */
     padding: 0px; /* No padding */
     border-radius: 15px;
     box-shadow: 0px 5px 10px 5px #F2F2F2;
 }
 .fig_activites img{ /* Activités cards image Style : complement  */
-    width: 100%;
-    object-fit: cover;
+    width: 100%; /* Fixed width image */
+    object-fit: cover; /* keep image proportion and adjust with image area */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -590,23 +597,22 @@ header{ /* header first layer style : use of flex-box */
 .link_activites{ /* Activites Link Style  */
     width: 100%;
     height: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display:flex; /* Active flexbox */
+    flex-direction: column; /* Vertical alignement; flex-start (default) */
+    align-items: flex-start; /* Secondary direction : items to the left */
     text-decoration: none; /* No link default style */
     color:#000;
 }
 
 .figcap_activite{ /* Activités cards : figure caption Style */
-    margin: auto 0;
-    height: 40px;
+    height: 40px; /* fixed height to keep same size for each cards */
     padding: 0;
-    display: flex;
+    display: flex; /* To center text in caption */
 }
 
 .h3_activite{ /* Activités cards : Name Style */
-    margin: auto;
-    padding-left: 15px;
+    margin: auto; /* center text vertically in content with flexbox */
+    padding-left: 15px; /* position for text start */
     font-size: 70%;
 }
 
@@ -614,15 +620,15 @@ header{ /* header first layer style : use of flex-box */
 /* Definition of the 'Hebergement' Section style */
 
 .footer{ /* 1st layer Footer style */
-    margin-top: 40px;
-    padding: 32px 35px 30px 35px;
+    margin-top: 40px; /* Top vertical space definition */
+    padding: 32px 35px 30px 35px; /* Internal dimension for child */
     background-color: #F2F2F2;
     display: flex;
     justify-content: space-between;
 }
 
 .footer div{ /* sub-aera of footer style */
-    width: 33%;
+    width: 33%; /* Definition of the repartition 1/3 for each */
 }
 
 .footer h2{ /* footer titles style */
@@ -632,14 +638,14 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .footer ul{ /* footer liste style */
-    margin: 7px 0 4px 0;
+    margin: 7px 0 4px 0; /* Position of the list */
     padding: 0;
     list-style-type: none; /* No puce */
 }
 
 .footer li{ /* footer liste items style */
     margin: 0;
-    padding: 1.5px 0;
+    padding: 1.5px 0; /* Vertical space for items */
 }
 
 .link_footer{ /* Footer links style */
