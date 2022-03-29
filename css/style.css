@@ -20,23 +20,6 @@ body{
     margin: auto; /* Center bloc_page in combination with display: flex */
 }
 
-/* Tablette screen */
-/*@media screen and (min-width: 768px) and (max-width: 991px)
-{
-    #bloc_page{
-        width: auto;
-        margin: auto;
-    }
-}*/
-
-/* Phone screen ; standard style */
-/* @media screen and (max-width: 767px)
-{
-    #bloc_page{
-        width: 100%;
-    }
-} */
-
 /* ========================================================================== */
 /* Definition of the Header style */
 header{ /* header first layer style : use of flex-box */
@@ -76,14 +59,13 @@ header{ /* header first layer style : use of flex-box */
 }
 
 /* Tablette screen */
-@media screen and (min-width: 768px) and (max-width: 991px)
-{
+@media screen and (min-width: 768px) and (max-width: 991px){
     /* No specification for the moment */
 }
 
 /* Phone screen ; standard style */
-@media screen and (max-width: 767px)
-{
+@media screen and (max-width: 767px){
+    /* Definition of the Header style */
     header{ /* header first layer style : modification of flex-box behavior */
         flex-direction: column; /* Change of the direction for logo and nav menu */
         justify-content: center; /* center in the main direction */
@@ -92,8 +74,7 @@ header{ /* header first layer style : use of flex-box */
 
     .logo_header{ /* Style of the image for the logo */
         width: 100px; /* Define size of the logo */
-        margin: 25px auto 30px auto; /* Reduction of the margin in the left */
-        text-align: center; /* center the text */
+        margin: 25px auto 30px auto; /* Auto margin left and right + fixed for top and bottom */
         padding-left: 25px; /* correction gap in order to center picture */
     }
 
@@ -116,7 +97,7 @@ header{ /* header first layer style : use of flex-box */
     {
         width: 100%; /* Set width 100% to fill space */
         text-align: center; /* Get text centered */
-        font-size: 140%;
+        font-size: 100%;
         padding: 5px 5px 15px 5px; /* top and bottom padding to position and border distance */
         border-bottom: 3px solid #F2F2F2; /* set grey border for non-hover link */
     }
@@ -192,6 +173,12 @@ header{ /* header first layer style : use of flex-box */
     background-color: #0065FC;
     border: 0; /* suppress border */
     color: #FFF; /* white text */
+}
+.f_button_icon{ /* specific style of the search button with icon for tablet and phone screen */
+    display: none;
+}
+.f_loupe_icon{ /* specific style of the search button with icon for tablet and phone screen */
+    display: none;
 }
 
 .filtres{ /* 1st layer style for the filtres area */
@@ -291,6 +278,120 @@ header{ /* header first layer style : use of flex-box */
     padding: 3px 6px 3px 6px; /* set padding for the size and shape of the circle around */
     border-radius: 30px; /* set border radius for the shape of the circle around */
     margin-right: 8px; /* position of the icon with the text */
+}
+
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Recherche' Section style */
+    .s_recherche{ /* First layer style */
+        margin-top: 35px;
+    }
+
+    .s_recherche h1{ /* First title style */
+        margin: 0px 23px; /* margin left and right to position the text and 0 for other */
+        font-size: 140%; /* Size of text */
+    }
+
+    .s_recherche > p{ /* Second line + info line style */
+        margin: 0px 23px; /* margin left and right to position the text and 0 for other */
+        padding: 15px 0px; /* padding top and bottom to position the text and 0 for other */
+        font-size: 100%; /* Size of text */
+    }
+
+    .form_recherche{ /* First layer style for the form */
+        margin: 20px auto 20px 23px; /* margin to position the form with the above text and the filters section */
+        font-size: 120%; /* Text size for the form */
+    }
+
+    .f_icon_loc{ /* style of the search label icon */
+        font-size: 100%; /* size of the icon */
+        padding: 17px 18px; /* padding to define the size of the background and the form height*/
+        border-top-left-radius: 15px; /* left border radius to round the background */
+        border-bottom-left-radius: 15px; /* left border radius to round the background */
+    }
+
+    .f_ville{ /* specific style of the search input */
+        width: 100%; /* size of the text area to get go behaviour for button and icon */
+        padding: 0 0 0 18px; /* automatic height with flex ; horizontal padding 10px */
+    }
+
+    .f_button{ /* specific style of the search button in normal screen */
+        display: none; /* Hide button 'RECHERCHE' */
+    }
+    
+    .f_button_icon{ /* specific style of the search button with icon for tablet and phone screen */
+        display: inline; /* Display button 'empty' */
+        padding: 0 26px; /* automatic height with flex ; horizontal padding 26px */
+        border-radius: 15px; /* define border radius to fit the search icon */
+        background-color: #0065FC;
+        border: 0; /* suppress border */
+        /* Displacement to compens radius and gap with search input */
+        position: relative;
+        right: 10px
+    }
+    .f_loupe_icon{ /* specific style of the search button with icon for tablet and phone screen */
+        display: inline; /* Display icon 'search' */
+        margin: auto; /* smallest area around icon */
+        font-size: 90%;
+        color: #FFF; /* white text */
+        /* Displacement to compens gap with search button */
+        position: relative;
+        right: 44px;
+    }
+
+    .filtres{ /* 1st layer style for the filtres area */
+        margin: 0 0 0 23px; /* specific margin to position from the page left side */
+        padding: 10px 0;
+    }
+
+    .filtres_title{ /* specific style for the title in the filtres area */
+        font-size: 120%;
+        margin-right: 20px; /* in order to set distance btw title and the group of filters */
+        padding-bottom: 15px;
+    }
+
+    .filtre_list{ /* specific style for the group of filters in the filtres area */
+        font-size: 110%;
+    }
+
+    .filtre_list li{ /* definition of the filter text style */
+        margin: 7px 0px; /* Get vertical space if several lines */
+    }
+
+    .filtre_list li span{ /* definition of the filter text style */
+        padding: 12px 15px 11.5px 32px; /* in order to set distance btw each filter and fit with icons (+relative position) */
+        /* definition of the grey border */
+        border-top: 2px solid #D9D9D9;
+        border-right: 2px solid #D9D9D9;
+        border-bottom: 2px solid #D9D9D9;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        /* position to fit icon with filters */
+        position: relative;
+        left: -22px;
+    }
+
+    .filtre_list li i{ /* definition of the global filter icon style */
+        border-radius: 25px; /* for background area shape */
+    }
+
+    .other i{ /* definition of the specific economic filter icon style */
+        padding: 15px; /* specific padding for background surface area in circle */
+    }
+
+    .economique i{ /* definition of the specific economic filter icon style */
+        padding: 15px 13px 15px 13px; /* specific padding for background surface area in circle */
+    }
+
+    .familial i{ /* definition of the specific familial filter icon style */
+        padding: 15px 17px 15px 17px; /* specific padding for background surface area in circle */
+    }
+
+    .info i{ /* Specific style for the info icon */
+        font-size: 80%; /* size of the icon */
+        border: 1.5px solid #F2F2F2; /* set border for the circle around */
+        padding: 6px 10px 6px 10px; /* set padding for the size and shape of the circle around */
+    }
 }
 
 /* ========================================================================== */
@@ -518,6 +619,125 @@ header{ /* header first layer style : use of flex-box */
     color: #D9D9D9;
 }
 
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Hebergement' Section style */
+    .s_hebergement{ /* 1st layer of Hébergement section Style */
+        width: 100%; /* Change size */
+        margin-top: 25px;
+        padding: 0; /* No padding */
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+
+    .a_hebergement{ /* Hébergement article Style */
+        margin: 0; /* change margin for background */
+        width: 100%; /* change : Full width */
+        min-width: 0px; /* change : No min width */
+        background-color: #FFF; /* change to white */
+        border-radius: 0px; /* no more radius */
+    }
+
+    .a_hebergement h2{ /* Hébergement title Style */
+        margin: 37px 23px 15px 23px; /* position with margin */
+        font-size: 150%;
+    }
+
+    .div_hebergement{ /* Hébergement Area for cards Style  */
+        margin: 0 15px; /* position with margin */
+    }
+
+    .fig_hebergement{ /* Hébergement cards Style */
+        width: 100%; /* full width */
+        height: 195px; /* Fixed height to 130px in order to adjust image size */
+        margin: 5px 0 7px 0; /* position with margin */
+        padding: 1.5%; /* No padding */
+        border-radius: 20px;
+    }
+
+    .fig_hebergement img{ /* Hébergement cards : image Style */
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+    }
+
+    .figcap_hebergement{ /* Hébergement cards : figure caption Style */
+        margin: 3px 10px 3px 10px; /* Position of the caption */
+        padding: 0;
+    }
+
+    .h4_hebergement{ /* Hébergement cards : Name Style */
+        margin: 6px 0px 4px 0px;  /* Position of the Name */
+        font-size: 100%;
+    }
+
+    .p_hebergement{ /* Hébergement cards : Text Price Style */
+        margin-bottom: 3px;
+        font-size: 90%;
+    }
+
+    .l_i_hebergement i{ /* Hébergement cards : Size of Stars */
+        font-size: 80%; /* Icon size */
+    }
+
+    .h3_more{ /* Hébergement end title Style */
+        margin: 25px auto 30px 23px; /* position with margin */
+        font-size: 120%;
+    }
+
+    /* ========================================================================== */
+    /* Definition of the 'Populaire' Section style */
+    .a_populaire{ /* 1st layer of Populaire aside Style */
+        margin: 0; /* position with margin for background */
+        padding: 0 0 30px 0; /* No padding */
+        width: 100%; /* full width */
+        min-width: none;
+        border-radius: 0px;
+    }
+
+    .title_pop h2{ /* Populaire title Style */
+        margin: 40px auto 15px 23px; /* position with margin */
+        font-size: 150%;
+    }
+
+    .title_pop i{ /* Populaire title icon Style */
+        margin: 40px 23px 15px auto; /* position with margin */
+        font-size: 160%;
+    }
+
+    .div_populaire{ /* Populaire Area for cards Style */
+        margin: 0px 15px 5px 15px; /* position with margin */
+    }
+
+    .fig_populaire{ /* Populaire cards Style */
+        height: 140px; /* Fixed height to 93px */
+        margin-bottom: 3px;
+        border-radius: 20px;
+    }
+
+    .fig_populaire img{ /* Populaire cards : image Style */
+        border-top-left-radius: 17px;
+        border-bottom-left-radius: 17px;
+    }
+
+    .figcap_populaire{ /* Populaire cards : figure caption Style */
+        margin: 10px 2px 6px 20px; /* Position of the caption in card */
+    }
+
+    .h4_populaire{ /* Populaire cards : Name Style */
+        margin: 4px 0; /* Position title */
+        font-size: 100%;
+    }
+
+    .p_populaire{ /* Populaire cards : Text Price Style */
+        margin: 4px 0; /* Position text */
+        font-size: 90%;
+    }
+
+    .l_i_populaire i{ /* Populaire cards : Size of Stars */
+        font-size: 75%;
+    }
+}
+
 /* ========================================================================== */
 /* Definition of the 'Activités' Section style */
 .s_activites{ /* 1st layer of Activités section Style */
@@ -535,7 +755,7 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .div_activites{ /* Activités area Style */
-    margin: 5px 0 15px 0; /* position with margin */
+    margin: 5px 0 10px 0; /* position with margin */
     padding: 0; /* No padding */
     width: 100%;
     /*min-width: 850px; /* 992 - 2 x 3% (padding) = 932 */
@@ -616,8 +836,83 @@ header{ /* header first layer style : use of flex-box */
     font-size: 70%;
 }
 
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Activités' Section style */
+    .s_activites{ /* 1st layer of Activités section Style */
+        /* max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
+        width: 90%; /* 100% - 2 x 3% (padding) due to content-box */
+        margin: 0; /* No margin */
+        padding: 0 5% 0 5%; /* No padding except for page border side with 35px */
+    }
+
+    .h2_activites_title{ /* Activités title Style */
+        margin: 25px 0 30px 0; /* position with margin */
+        padding: 0; /* No padding */
+        font-size: 150%;
+    }
+
+    .div_activites{ /* Activités area Style */
+        height: auto; /* No more Fixed height to 305px */
+    }
+
+    .fig_activites:nth-child(1),
+    .fig_activites:nth-child(4) { /* activites cards Style portrait */
+        height: 205px; /* Fixed height to cards order number 1 and 4 */
+    }
+    .fig_activites:nth-child(1) img,
+    .fig_activites:nth-child(4) img{ /* Activités cards : image Style portrait */
+        height: 145px; /* Fixed height to image in cards order number 1 and 4 */
+    }
+
+    .fig_activites:nth-child(2){ /* activites cards Style paysage big */
+        height: 205px; /* Fixed height to cards order number 2 */
+    }
+    .fig_activites:nth-child(2) img{ /* Activités cards : image Style paysage big */
+        height: 145px; /* Fixed height to image in cards order number 2 */
+    }
+
+    .fig_activites:nth-child(3){ /* activites cards Style paysage small */
+        height: 205px; /* Fixed height to cards order number 3 */
+    }
+    .fig_activites:nth-child(3) img{ /* Activités cards : image Style paysage small */
+        height: 145px; /* Fixed height to image in cards order number 3 */
+    }
+
+    .fig_activites:nth-child(5),
+    .fig_activites:nth-child(6){ /* activites cards Style paysage normal */
+        height: 205px; /* Fixed height to cards order number 5 and 6 */
+    }
+    .fig_activites:nth-child(5) img,
+    .fig_activites:nth-child(6) img{ /* Activités cards : image Style paysage normal */
+        height: 145px; /* Fixed height to image in cards order number 5 and 6 */
+    }
+    .fig_activites:nth-child(5) img{ /* Activités cards : image Style paysage normal */
+        object-position: 0px -5px; /* Correction position for good view of 'Notre-Dame-de-la-Garde */
+    }
+
+    .fig_activites { /* activites cards Style : complement  */
+        width: 100%; /* 4 cards in a line => around 25% but substract margin and padding */
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 5px 10px 5px #F2F2F2;
+    }
+    .fig_activites img{ /* Activités cards image Style : complement  */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .figcap_activite{ /* Activités cards : figure caption Style */
+        height: 60px; /* fixed height to keep same size for each cards */
+    }
+
+    .h3_activite{ /* Activités cards : Name Style */
+        font-size: 100%;
+    }
+}
+
 /* ========================================================================== */
-/* Definition of the 'Hebergement' Section style */
+/* Definition of the 'Footer' Section style */
 
 .footer{ /* 1st layer Footer style */
     margin-top: 40px; /* Top vertical space definition */
@@ -653,16 +948,36 @@ header{ /* header first layer style : use of flex-box */
     color:#000;
     font-size: 70%;
 }
-/* #0065FC Bleu */
-/* #DEEBFF bleu clair */
-/* #F2F2F2 gris */
 
-/* 6000 largeur pour 992 => facteur de 6 */
-/* 1847 => 305
-986 => big 163
-685 => small 113
-810 => 134
-870 => 144 */
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Footer' Section style */
+    .footer{ /* 1st layer Footer style */
+        margin-top: 25px; /* Top vertical space definition */
+        padding: 30px 23px 20px 23px; /* Internal dimension for child */
+        flex-direction: column;
+    }
 
+    .footer div{ /* sub-aera of footer style */
+        width: 100%; /* Definition of the repartition 1/3 for each */
+    }
 
+    .footer h2{ /* footer titles style */
+        margin-top: 10px;
+        margin-bottom: 15px;
+        padding: 5px 0;
+        font-size: 110%;
+    }
 
+    .footer ul{ /* footer liste style */
+        margin: 7px 0 25px 0; /* Position of the list */
+    }
+
+    .footer li{ /* footer liste items style */
+        margin: 12px 0;
+    }
+
+    .link_footer{ /* Footer links style */
+        font-size: 100%;
+    }
+}
