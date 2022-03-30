@@ -173,9 +173,6 @@ header{ /* header first layer style : use of flex-box */
 .f_button_icon{ /* specific style of the search button with icon for tablet and phone screen */
     display: none;
 }
-.f_loupe_icon{ /* specific style of the search button with icon for tablet and phone screen */
-    display: none;
-}
 
 .filtres{ /* 1st layer style for the filtres area */
     display: flex; /* activation of flex-box */
@@ -195,7 +192,7 @@ header{ /* header first layer style : use of flex-box */
 .filtre_list{ /* specific style for the group of filters in the filtres area */
     display: flex; /* activation of flex-box */
     flex-wrap: wrap; /* Add warp for responsive */
-    justify-content: flex-start; /* No move in the first line */
+    justify-content: flex-start; /* No move in the first line (default value for flexbox) */
     align-content: space-between; /* Vertical position if several line */
     list-style-type: none; /* no puce */
     font-weight: 600;
@@ -320,24 +317,17 @@ header{ /* header first layer style : use of flex-box */
         display: none; /* Hide button 'RECHERCHE' */
     }
     
-    .f_button_icon{ /* specific style of the search button with icon for tablet and phone screen */
-        display: inline; /* Display button 'empty' */
-        padding: 0 26px; /* automatic height with flex ; horizontal padding 26px */
+    .f_button_icon, .f_button_icon::after{ /* specific style of the search button with icon for tablet and phone screen */
+        display: inline; /* Display button with icon */
+        padding: 0 19px; /* automatic height with flex ; horizontal padding 26px */
         border-radius: 15px; /* define border radius to fit the search icon */
         background-color: #0065FC;
         border: 0; /* suppress border */
+        font-size: 90%;
+        color: #FFF; /* white text */
         /* Displacement to compens radius and gap with search input */
         position: relative;
         right: 10px
-    }
-    .f_loupe_icon{ /* specific style of the search button with icon for tablet and phone screen */
-        display: inline; /* Display icon 'search' */
-        margin: auto; /* smallest area around icon */
-        font-size: 90%;
-        color: #FFF; /* white text */
-        /* Displacement to compens gap with search button */
-        position: relative;
-        right: 44px;
     }
 
     .filtres{ /* 1st layer style for the filtres area */
@@ -347,7 +337,6 @@ header{ /* header first layer style : use of flex-box */
 
     .filtres_title{ /* specific style for the title in the filtres area */
         font-size: 120%;
-        margin-right: 20px; /* in order to set distance btw title and the group of filters */
         padding-bottom: 15px;
     }
 
@@ -372,20 +361,16 @@ header{ /* header first layer style : use of flex-box */
         left: -22px;
     }
 
-    .filtre_list li i{ /* definition of the global filter icon style */
-        border-radius: 25px; /* for background area shape */
-    }
-
     .other i{ /* definition of the specific economic filter icon style */
         padding: 15px; /* specific padding for background surface area in circle */
     }
 
     .economique i{ /* definition of the specific economic filter icon style */
-        padding: 15px 13px 15px 13px; /* specific padding for background surface area in circle */
+        padding: 15px 13px; /* specific padding for background surface area in circle */
     }
 
     .familial i{ /* definition of the specific familial filter icon style */
-        padding: 15px 17px 15px 17px; /* specific padding for background surface area in circle */
+        padding: 15px 17px; /* specific padding for background surface area in circle */
     }
 
     .info i{ /* Specific style for the info icon */
@@ -409,7 +394,7 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .a_hebergement{ /* Hébergement article Style */
-    margin: 15px 1% 15px 0; /* position with margin for background */
+    margin: 15px 0; /* position with margin for background */
     padding: 0; /* No padding */
     width: 66%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 1% (margin) = 66% */
     background-color: #F2F2F2;
@@ -433,18 +418,18 @@ header{ /* header first layer style : use of flex-box */
 .div_hebergement a{ /* Hébergement Link Style  */
     text-decoration: none; /* No link default style */
     color:#000;
-    width: 29%; /* 1/3 par cards : 33 */
-    height: 140px;
-    margin: 8px 0 8px 0; /* position with margin due to link area */
+    width: 31%; /* 1/3 par cards : 33 */
+    height: 100%;
+    margin: 8px 0; /* position with margin due to link area */
 }
 
 .fig_hebergement{ /* Hébergement cards Style */
     display: flex;
     flex-direction: column;
     margin: 0;
-    width: 97%; /* cards : 100 - 3 = 97% ( 3 = 2 x 1.5% padding )*/
+    width: 96%; /* cards : 100 - 3 = 97% ( 3 = 2 x 1.5% padding )*/
     height: 130px; /* Fixed height to 130px in order to adjust image size */
-    padding: 1.5%; /* No padding */
+    padding: 2%; /* No padding */
     background-color: #FFF;
     border-radius: 15px;
     box-shadow: 0px 5px 10px 5px #D9D9D9;
@@ -521,10 +506,9 @@ header{ /* header first layer style : use of flex-box */
 /* ========================================================================== */
 /* Definition of the 'Populaire' Section style */
 .a_populaire{ /* 1st layer of Populaire aside Style */
-    margin: 15px 0 15px 2%; /* position with margin for background */
+    margin: 15px 0; /* position with margin for background */
     padding: 0; /* No padding */
-    width: 31%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 2% (margin) = 31% */
-    min-width: 250px; /* Min size + responsive for normal screen */
+    width: 32%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 2% (margin) = 31% */
     background-color: #F2F2F2;
     border-radius: 20px;
 }
@@ -549,13 +533,16 @@ header{ /* header first layer style : use of flex-box */
 
 .div_populaire{ /* Populaire Area for cards Style */
     display: flex;
+    justify-content: space-between;
+    align-content: space-around;
     flex-wrap: wrap;
-    margin: 0px 22px; /* position with margin */
+    margin: 0px 25px; /* position with margin */
 }
 
 .div_populaire a{ /* Populaire Link Style  */
-    width: 97%;
-    margin: 8px 1.5% 8px 1.5%; /* position with margin */
+    width: 100%;
+    height: 100%;
+    margin: 8px 0; /* position with margin */
     text-decoration: none; /* No link default style */
     color:#000;
 }
@@ -572,8 +559,8 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .fig_populaire img{ /* Populaire cards : image Style */
-    max-height: 100%; /* Define image height */
     width: 40%; /* Define image width */
+    min-width: 40%; /* Due to 'object-fit: cover' and different image size */
     object-fit: cover; /* keep image proportion and adjust with image area */
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -624,24 +611,86 @@ header{ /* header first layer style : use of flex-box */
 
 /* Tablette screen style */
 @media screen and (min-width: 768px) and (max-width: 991px){
-    /* No specification for the moment */
+    /* Change for good display in hebergement section */
+    .s_hebergement{ /* 1st layer of Hébergement section Style */
+        flex-direction: column-reverse;
+    }
+
+    .a_hebergement{ /* Hébergement article Style */
+        width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 1% (margin) = 66% */
+        background-color: #FFF;
+        box-shadow: 0px 0px 5px 1px #F2F2F2;
+    }
+
+    .fig_hebergement{ /* Hébergement cards Style */
+        height: 150px; /* Fixed height to 130px in order to adjust image size */
+    }
+
+    .h4_hebergement{ /* Hébergement cards : Name Style */
+        font-size: 80%;
+    }
+    
+    .p_hebergement{ /* Hébergement cards : Text Price Style */
+        font-size: 70%;
+    }
+
+    .l_i_hebergement i{ /* Hébergement cards : Size of Stars */
+        font-size: 65%; /* Icon size */
+    }
+
+    /* Definition of the 'Populaire' Section style */
+    .a_populaire{ /* 1st layer of Populaire aside Style */
+        width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 2% (margin) = 31% */
+        padding-bottom: 25px;
+    }
+
+    .div_populaire a{ /* Populaire Link Style  */
+        width: 31%;
+    }
+
+    .fig_populaire{ /* Populaire cards Style */
+        height: 140px; /* Fixed height to 93px */
+    }
+
+    .fig_populaire img{ /* Populaire cards : image Style */
+        width: 50%; /* Define image width */
+        min-width: 50%; /* Due to 'object-fit: cover' and different image size */
+    }
+
+    .figcap_populaire{ /* Populaire cards : figure caption Style */
+        justify-content: space-around; /* Constant space between items combined with margin-top auto on stars incons */
+    }
+
+    .h4_populaire{ /* Populaire cards : Name Style */
+        margin: 15px 0 2px 0; /* Position title */
+        font-size: 80%;
+    }
+
+    .p_populaire{ /* Populaire cards : Text Price Style */
+        font-size: 70%;
+    }
+
+    .l_i_populaire{ /* Populaire cards : Evaluation Style */
+        margin: 0 0 15px 0; /* To keep stars on bottom */
+    }
+
+    .l_i_populaire i{ /* Populaire cards : Size of Stars */
+        font-size: 60%;
+    }
 }
 
 /* Phone screen ; standard style */
 @media screen and (max-width: 767px){
     /* Definition of the 'Hebergement' Section style */
     .s_hebergement{ /* 1st layer of Hébergement section Style */
-        width: 100%; /* Change size */
         margin-top: 25px;
         padding: 0; /* No padding */
         flex-direction: column-reverse;
-        justify-content: space-between;
     }
 
     .a_hebergement{ /* Hébergement article Style */
         margin: 0; /* change margin for background */
         width: 100%; /* change : Full width */
-        min-width: 0px; /* change : No min width */
         background-color: #FFF; /* change to white */
         border-radius: 0px; /* no more radius */
     }
@@ -657,14 +706,14 @@ header{ /* header first layer style : use of flex-box */
 
     .div_hebergement a{ /* Hébergement Area for cards Style  */
         width: 100%; /* full width */
+        height: 100%;
         margin: 5px 0 7px 0; /* position with margin */
     }
 
     .fig_hebergement{ /* Hébergement cards Style */
-        width: 97%; /* full width */
+        width: 98%; /* full width */
         height: 195px; /* Fixed height to 130px in order to adjust image size */
-        margin: 0; /* position with margin */
-        padding: 1.5%; /* No padding */
+        padding: 1%; /* No padding */
         border-radius: 20px;
     }
 
@@ -675,7 +724,6 @@ header{ /* header first layer style : use of flex-box */
 
     .figcap_hebergement{ /* Hébergement cards : figure caption Style */
         margin: 3px 10px 3px 10px; /* Position of the caption */
-        padding: 0;
     }
 
     .h4_hebergement{ /* Hébergement cards : Name Style */
@@ -703,7 +751,6 @@ header{ /* header first layer style : use of flex-box */
         margin: 0; /* position with margin for background */
         padding: 0 0 30px 0; /* No padding */
         width: 100%; /* full width */
-        min-width: 0px;
         border-radius: 0px;
     }
 
@@ -722,15 +769,13 @@ header{ /* header first layer style : use of flex-box */
     }
 
     .div_populaire a{ /* Populaire Area for cards Style */
-        width: 100%;
-        margin: 0;
+        margin: 8px 0;
     }
 
     .fig_populaire{ /* Populaire cards Style */
         height: 140px; /* Fixed height to 93px */
-        width: 97%; /* Size of the card with % of margin and padding : 100 - 4.3 = 95.7% */
-        padding: 1.5%; /* No padding */
-        margin-bottom: 10px;
+        width: 98%; /* Size of the card with % of margin and padding : 100 - 4.3 = 95.7% */
+        padding: 1%; /* No padding */
         border-radius: 20px;
     }
 
@@ -761,10 +806,11 @@ header{ /* header first layer style : use of flex-box */
 /* ========================================================================== */
 /* Definition of the 'Activités' Section style */
 .s_activites{ /* 1st layer of Activités section Style */
-    /* max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
-    width: 94%; /* 100% - 2 x 3% (padding) due to content-box */
+    box-sizing: border-box;
+    width: 100%; /* 100% - 2 x 3% (padding) due to content-box */
     margin: 0; /* No margin */
-    padding: 0 3% 0 3%; /* No padding except for page border side with 35px */
+    padding: 0 35px; /* No padding except for page border side with 35px 
+    padding used and not margin due to 'box-sizing: border-box' */
 }
 
 .h2_activites_title{ /* Activités title Style */
@@ -778,7 +824,6 @@ header{ /* header first layer style : use of flex-box */
     margin: 5px 0 10px 0; /* position with margin */
     padding: 0; /* No padding */
     width: 100%;
-    /*min-width: 850px; /* 992 - 2 x 3% (padding) = 932 */
     height: 305px; /* Fixed height to 305px */
     display: flex;
     flex-direction: column;
@@ -834,8 +879,8 @@ header{ /* header first layer style : use of flex-box */
     flex-direction: column; /* Vertical alignement; flex-start (default) */
     align-items: flex-start; /* Secondary direction : items to the left */
     width: 100%; /* 4 cards in a line => around 25% but substract margin and padding */
-    margin: 0px; /* No margin */
-    padding: 0px; /* No padding */
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
     border-radius: 15px;
     box-shadow: 0px 5px 10px 5px #F2F2F2;
 }
@@ -868,15 +913,11 @@ header{ /* header first layer style : use of flex-box */
 @media screen and (max-width: 767px){
     /* Definition of the 'Activités' Section style */
     .s_activites{ /* 1st layer of Activités section Style */
-        /* max-width: 1128px; /* 1200 - 2 x 3% (padding) due to content-box */
-        width: 90%; /* 100% - 2 x 5% (padding) due to content-box */
-        margin: 0; /* No margin */
-        padding: 0 5% 0 5%; /* No padding except for page border side with 35px */
+        padding: 0 23px; /* No padding except for page border side with 35px */
     }
 
     .h2_activites_title{ /* Activités title Style */
         margin: 25px 0 30px 0; /* position with margin */
-        padding: 0; /* No padding */
         font-size: 150%;
     }
 
