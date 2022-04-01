@@ -1,8 +1,7 @@
 /* ========================================================================== */
 /* Déclaration initiale for BOX-SIZING */
 * {
-    box-sizing: content-box;
-   /* box-sizing est appliqué à tous les éléments */
+    box-sizing: content-box; /* box-sizing est appliqué à tous les éléments */
    }
 
 /* ========================================================================== */
@@ -15,17 +14,14 @@ body{
 /* Definition of the bloc_page style */
 /* Computer screen ; standard style and others with 'viewport' param in html */
 #bloc_page{
-    /*width: 100%; /* To get some space with the screen border */
     margin: 0; /* No space with the screen border */
 }
 
 /* ========================================================================== */
 /* Definition of the Header style */
 header{ /* header first layer style : use of flex-box */
-    /*width: 100%; /* Use total of the Bloc_page width */
     display: flex; /* use of flexbox */
     justify-content: space-between; /* Main direction with same space between blocks */
-    /*align-items: flex-start; /* Default value*/
 }
 
 .logo_header{ /* Style of the image for the logo */
@@ -43,7 +39,6 @@ header{ /* header first layer style : use of flex-box */
 .menu a /* Style of the link in the nav menu */
 {
     font-size: 70%; /* size of the text */
-    /*font-weight: 400; /* Normal thickness */
     color: #000;
     padding: 39px 30px 0px 20px; /* size = 'parent size' + '2px for border when hover' for top border in top page border */
     text-decoration: none; /* No link default style */
@@ -65,7 +60,6 @@ header{ /* header first layer style : use of flex-box */
     /* Definition of the Header style */
     header{ /* header first layer style : modification of flex-box behavior */
         flex-direction: column; /* Change of the direction for logo and nav menu */
-        /*justify-content: center; /* center in the main direction */
         align-items: stretch; /* stretch to fill the place in the second direction */
     }
 
@@ -84,10 +78,7 @@ header{ /* header first layer style : use of flex-box */
     .menu li /* Style of the items in the nav menu */
     {
         width: 50%; /* Set width 2x50% to fill space */
-        /*margin: auto; /* margin auto to center */
-        /*padding: 0; /* no padding for bottom border */
         display: flex; /* to position the links */
-        /*justify-content: stretch; /* to fill the place */
     }
 
     .menu a /* Style of the link in the nav menu */
@@ -109,7 +100,6 @@ header{ /* header first layer style : use of flex-box */
 /* ========================================================================== */
 /* Definition of the 'Recherche' Section style */
 .s_recherche{ /* First layer style */
-    /*width: 100%;*/
     margin: 0 35px; /* margin left and right to position the child and 0 for other */
 }
 
@@ -136,12 +126,10 @@ header{ /* header first layer style : use of flex-box */
     padding: 11px 13px; /* padding to define the size of the background and the form height*/
     border-top-left-radius: 10px; /* left border radius to round the background */
     border-bottom-left-radius: 10px; /* left border radius to round the background */
-    /*margin: 0; /* no margin, position made in the form */
 }
 
 .form_recherche input{ /* 1st layer style of the two inputs */
     appearance: none; /* suppress default behaviour */
-    /*margin: 0; /* no margin, position define with flex */
     font-weight: 600;
     font-size: 100%;
 }
@@ -150,8 +138,6 @@ header{ /* header first layer style : use of flex-box */
     outline: none; /* no border when focus */
     width: 140px; /* size of the text area */
     padding: 0 10px; /* automatic height with flex ; horizontal padding 10px */
-    /*color: #000;*/
-    /*background-color: #FFF;*/
     /* border on top and bottom */
     border-width: 1px 0;
     border-color: #F2F2F2;
@@ -163,7 +149,7 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .f_button{ /* specific style of the search button */
-    padding: 0 15px; /* automatic height with flex ; horizontal padding 10px */
+    padding: 0 15px; /* automatic height with flex ; horizontal padding 15px */
     border-top-right-radius: 10px; /* define border radius to fit with left side of the search icon */
     border-bottom-right-radius: 10px; /* define border radius to fit with left side of the search icon */
     background-color: #0065FC;
@@ -171,14 +157,13 @@ header{ /* header first layer style : use of flex-box */
     color: #FFF; /* white text */
 }
 .f_button_icon{ /* specific style of the search button with icon for tablet and phone screen */
-    display: none;
+    display: none; /* Not use in normal screen mode, only for phone screen */
 }
 
 .filtres{ /* 1st layer style for the filtres area */
     display: flex; /* activation of flex-box */
     flex-wrap: wrap; /* Add warp for responsive */
-    /*justify-content: flex-start; /* position box at the left */
-    margin: 0 35px 0 5px; /* specific margin to position from the page left side */
+    margin: 0 5px; /* specific margin to position from the page left side */
 }
 
 .filtres_title{ /* specific style for the title in the filtres area */
@@ -192,7 +177,6 @@ header{ /* header first layer style : use of flex-box */
 .filtre_list{ /* specific style for the group of filters in the filtres area */
     display: flex; /* activation of flex-box */
     flex-wrap: wrap; /* Add warp for responsive */
-    /*justify-content: flex-start; /* No move in the first line (default value for flexbox) */
     align-content: space-between; /* Vertical position if several line */
     list-style-type: none; /* no puce */
     font-weight: 600;
@@ -207,7 +191,6 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .filtre_list li span{ /* definition of the filter text style */
-    /*margin-right: 0; /* in order to set distance btw title and the group of filters */
     padding: 7.5px 15px 7px 27px; /* in order to set distance btw each filter and fit with icons (+relative position) */
     /* definition of the grey border */
     border-top: 1.5px solid #D9D9D9;
@@ -286,12 +269,10 @@ header{ /* header first layer style : use of flex-box */
     }
 
     .s_recherche h1{ /* First title style */
-        /*margin: 0 23px; /* margin left and right to position the text and 0 for other */
         font-size: 140%; /* Size of text */
     }
 
     .s_recherche > p{ /* Second line + info line style */
-        /*margin: 0 23px; /* margin left and right to position the text and 0 for other */
         padding: 15px 0; /* padding top and bottom to position the text and 0 for other */
         font-size: 100%; /* Size of text */
     }
@@ -384,7 +365,6 @@ header{ /* header first layer style : use of flex-box */
 /* Definition of the 'Hebergement' Section style */
 
 .s_hebergement{ /* 1st layer of Hébergement section Style */
-    /*margin: 0; /* No margin due to width 100% and padding left and right for space with page border */
     box-sizing: border-box;
     width: 100%; /* 100% due to border-box */
     padding: 0 35px; /* No padding except for page border side with 35px */
@@ -395,7 +375,6 @@ header{ /* header first layer style : use of flex-box */
 
 .a_hebergement{ /* Hébergement article Style */
     margin: 15px 0; /* position with margin for background */
-    /*padding: 0 25px; /* No padding vertical ; padding horizontal for position title and card */
     width: 66%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 1% (for space-between) = 66% */
     background-color: #F2F2F2;
     border-radius: 20px;
@@ -403,7 +382,6 @@ header{ /* header first layer style : use of flex-box */
 
 .a_hebergement h2{ /* Hébergement title Style */
     margin: 30px auto 10px 25px; /* position with margin */
-    /*padding: 0; /* No padding */
     font-size: 95%;
 }
 
@@ -412,14 +390,12 @@ header{ /* header first layer style : use of flex-box */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*align-content: space-around;*/
 }
 
 .div_hebergement a{ /* Hébergement Link Style  */
     text-decoration: none; /* No link default style */
     color:#000;
     width: 31%; /* 1/3 par cards : 33% - 2% (for space-between) */
-    /*height: 100%;*/
     margin: 8px 0; /* position with margin due to link area */
 }
 
@@ -437,7 +413,6 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .fig_hebergement img{ /* Hébergement cards : image Style */
-    /*width: 100%; /* Define image width */
     height: 63%;  /* Define image height */
     min-height: 63%; /* Width of the picture will be adapted to get to full height of the picture if max height of picture reached */
     object-fit: cover; /* keep image proportion and adjust with image area */
@@ -447,18 +422,15 @@ header{ /* header first layer style : use of flex-box */
 
 .figcap_hebergement{ /* Hébergement cards : figure caption Style */
     margin: 0px 10px; /* Position of the caption */
-    /*padding: 0;*/
 }
 
 .h4_hebergement{ /* Hébergement cards : Name Style */
     margin: 3px 0px 4px 0px;  /* Position of the Name */
-    /*padding: 0;*/
     font-size: 70%;
 }
 
 .p_hebergement{ /* Hébergement cards : Text Price Style */
     margin: 0; /* Disable default margin for p tag */
-    /*padding: 0;*/
     font-size: 60%;
 }
 
@@ -509,41 +481,33 @@ header{ /* header first layer style : use of flex-box */
 /* Definition of the 'Populaire' Section style */
 .a_populaire{ /* 1st layer of Populaire aside Style */
     margin: 15px 0; /* position with margin for background */
-    /*padding: 0; /* No padding */
     width: 32%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 1% (for space-between) = 32% */
     background-color: #F2F2F2;
     border-radius: 20px;
 }
 
 .title_pop{ /* Populaire title area Style */
-    /*margin: 0; /* position with margin */
-    /*padding: 0; /* No padding */
     display: flex; /* Auto horizontal positionning with flex-box*/
 }
 
 .title_pop h2{ /* Populaire title Style */
     margin: 30px auto 10px 25px; /* position with margin */
-    /*padding: 0; /* No padding */
     font-size: 95%;
 }
 
 .title_pop i{ /* Populaire title icon Style */
     margin: 30px 25px 10px auto; /* position with margin */
-    /*padding: 0; /* No padding */
     font-size: 100%;
 }
 
 .div_populaire{ /* Populaire Area for cards Style */
     display: flex;
-    /*justify-content: space-between;*/
-    /*align-content: space-around;*/
     flex-wrap: wrap;
     margin: 0px 25px; /* position with margin */
 }
 
 .div_populaire a{ /* Populaire Link Style  */
     width: 100%;
-    /*height: 100%;*/
     margin: 8px 0; /* position with margin */
     text-decoration: none; /* No link default style */
     color:#000;
@@ -570,7 +534,6 @@ header{ /* header first layer style : use of flex-box */
 
 .figcap_populaire{ /* Populaire cards : figure caption Style */
     margin: 5px 10px 3px 10px; /* Position of the caption in card */
-    /*padding: 0;*/
     display: flex; /* Active flexbox */
     flex-direction: column; /* Vertical alignement */
     justify-content: space-between; /* Constant space between items combined with margin-top auto on stars incons */
@@ -584,7 +547,6 @@ header{ /* header first layer style : use of flex-box */
 
 .p_populaire{ /* Populaire cards : Text Price Style */
     margin: 2px 0; /* Position text */
-    /* padding: 0; */
     font-size: 60%;
 }
 
@@ -619,13 +581,13 @@ header{ /* header first layer style : use of flex-box */
     }
 
     .a_hebergement{ /* Hébergement article Style */
-        width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 1% (margin) = 66% */
+        width: 100%; /* Now 100% */
         background-color: #FFF;
         box-shadow: 0px 0px 5px 1px #F2F2F2;
     }
 
     .fig_hebergement{ /* Hébergement cards Style */
-        height: 150px; /* Fixed height to 130px in order to adjust image size */
+        height: 150px; /* Fixed height now to 150px in order to adjust image size */
     }
 
     .h4_hebergement{ /* Hébergement cards : Name Style */
@@ -642,7 +604,7 @@ header{ /* header first layer style : use of flex-box */
 
     /* Definition of the 'Populaire' Section style */
     .a_populaire{ /* 1st layer of Populaire aside Style */
-        width: 100%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 2% (margin) = 31% */
+        width: 100%; /* Now 100% */
         padding-bottom: 25px;
     }
 
@@ -713,7 +675,6 @@ header{ /* header first layer style : use of flex-box */
 
     .div_hebergement a{ /* Hébergement Area for cards Style  */
         width: 100%; /* full width */
-        /*height: 100%;*/
         margin: 5px 0 7px 0; /* position with margin */
     }
 
@@ -815,21 +776,18 @@ header{ /* header first layer style : use of flex-box */
 .s_activites{ /* 1st layer of Activités section Style */
     box-sizing: border-box;
     width: 100%; /* 100% due to border-box and space in padding */
-    /*margin: 0; /* No margin */
     padding: 0 35px; /* No padding except for page border side with 35px 
     padding used and not margin due to 'box-sizing: border-box' */
 }
 
 .h2_activites_title{ /* Activités title Style */
     margin: 25px 0 15px 0; /* position with margin */
-    /*padding: 0; /* No padding */
     width: 100%;
     font-size: 95%;
 }
 
 .div_activites{ /* Activités area Style */
     margin: 5px 0 10px 0; /* position with margin */
-    /*padding: 0; /* No padding */
     width: 100%;
     height: 305px; /* Fixed height to 305px */
     display: flex;
@@ -887,7 +845,6 @@ header{ /* header first layer style : use of flex-box */
     align-items: flex-start; /* Secondary direction : items to the left */
     width: 100%; /* 4 cards in a line => around 25% but substract margin and padding */
     margin: 0; /* No margin */
-    /*padding: 0; /* No padding */
     border-radius: 15px;
     box-shadow: 0px 5px 10px 5px #F2F2F2;
 }
@@ -901,13 +858,11 @@ header{ /* header first layer style : use of flex-box */
 
 .figcap_activite{ /* Activités cards : figure caption Style */
     height: 40px; /* fixed height to keep same size for each cards */
-    /*padding: 0;*/
     display: flex; /* To center text in caption */
 }
 
 .h3_activite{ /* Activités cards : Name Style */
     margin: auto 15px; /* center text vertically in content with flexbox */
-    /*padding-left: 15px; /* position for text start */
     font-size: 70%;
 }
 
@@ -1005,7 +960,6 @@ header{ /* header first layer style : use of flex-box */
 
 .footer h2{ /* footer titles style */
     margin: 0;
-    /*padding: 0;*/
     font-size: 80%;
 }
 
@@ -1016,7 +970,6 @@ header{ /* header first layer style : use of flex-box */
 }
 
 .footer li{ /* footer liste items style */
-    /*margin: 0;*/
     padding: 1.5px 0; /* Vertical space for items */
 }
 
