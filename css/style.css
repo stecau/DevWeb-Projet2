@@ -1,0 +1,1024 @@
+/* ========================================================================== */
+/* Déclaration initiale for BOX-SIZING */
+* {
+    box-sizing: content-box; /* box-sizing est appliqué à tous les éléments */
+   }
+
+/* ========================================================================== */
+/* Definition of the Google font polices */
+body{
+    font-family: "Raleway", Verdana, sans-serif;
+}
+
+/* ========================================================================== */
+/* Definition of the bloc_page style */
+/* Computer screen ; standard style and others with 'viewport' param in html */
+#bloc_page{
+    margin: 0; /* No space with the screen border */
+}
+
+/* ========================================================================== */
+/* Definition of the Header style */
+header{ /* header first layer style : use of flex-box */
+    display: flex; /* use of flexbox */
+    justify-content: space-between; /* Main direction with same space between blocks */
+}
+
+.logo_header{ /* Style of the image for the logo */
+    width: 65px; /* Define size of the logo */
+    margin: auto 0 auto 45px; /* Vertical = center and 45px from left border */
+}
+
+.menu ul{ /* Style of the nav menu */
+    list-style-type: none; /* no puce */
+    display: flex; /* use of flexbox for li */
+    margin: 0 25px; /* 25px from page border ; nothing in vertical direction */
+    padding: 37px 0px 30px 0px; /* define heigth and vertical position ; 37px (top) + 30px (bottom) => 39px with 2px border in 'a' */
+}
+
+.menu a /* Style of the link in the nav menu */
+{
+    font-size: 70%; /* size of the text */
+    color: #000;
+    padding: 39px 30px 0px 20px; /* size = 'parent size' + '2px for border when hover' for top border in top page border */
+    text-decoration: none; /* No link default style */
+}
+
+.menu a:hover /* Style of the link in the nav menu when pointer hover */
+{
+    color: #0065FC;
+    border-top: 2px solid #0065FC; /* Border appear */
+}
+
+/* Tablette screen style */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    /* No specification */
+}
+
+/* Phone screen style */
+@media screen and (max-width: 767px){
+    /* Definition of the Header style */
+    header{ /* header first layer style : modification of flex-box behavior */
+        flex-direction: column; /* Change of the direction for logo and nav menu */
+        align-items: stretch; /* stretch to fill the place in the second direction */
+    }
+
+    .logo_header{ /* Style of the image for the logo */
+        width: 100px; /* Define size of the logo */
+        margin: 25px auto 30px auto; /* Auto margin left and right + fixed for top and bottom */
+        padding-left: 25px; /* correction gap in order to center picture */
+    }
+
+    .menu ul /* Style of the nav menu */
+    {
+        margin: 0; /* No more margin for ul due to stretch */
+        padding: 0; /* No more padding for ul due to border bottom */
+    }
+
+    .menu li /* Style of the items in the nav menu */
+    {
+        width: 50%; /* Set width 2x50% to fill space */
+        display: flex; /* to position the links */
+    }
+
+    .menu a /* Style of the link in the nav menu */
+    {
+        width: 100%; /* Set width 100% to fill space */
+        text-align: center; /* Get text centered */
+        font-size: 100%;
+        padding: 5px 5px 15px 5px; /* top and bottom padding to position and border distance */
+        border-bottom: 3px solid #F2F2F2; /* set grey border for non-hover link */
+    }
+
+    .menu a:hover /* Style of the link in the nav menu when pointer hover */
+    {
+        border-bottom: 3px solid #0065FC; /* set bottom border for hover link */
+        border-top: 0; /* no more top border for hover link from normal screen */
+    }
+}
+
+/* ========================================================================== */
+/* Definition of the 'Recherche' Section style */
+.s_recherche{ /* First layer style */
+    margin: 0 35px; /* margin left and right to position the child and 0 for other */
+}
+
+.s_recherche h1{ /* First title style */
+    font-size: 95%; /* Size of text */
+    font-weight: 600; /* Bold style for text */
+}
+
+.s_recherche > p{ /* Second line + info line style */
+    padding: 5px 0; /* padding top and bottom to position the text and 0 for other */
+    font-size: 70%; /* Size of text */
+}
+
+.form_recherche{ /* First layer style for the form */
+    display: flex; /* Flexbox activated for the form */
+    margin: 9px 0; /* margin to position the form with the above text and the filters section */
+    font-size: 75%; /* Text size for the form */
+}
+
+.f_icon_loc{ /* style of the search label icon */
+    color: #000; /* black icon */
+    font-size: 105%; /* size of the icon */
+    background-color: #F2F2F2; /* grey background */
+    padding: 11px 13px; /* padding to define the size of the background and the form height*/
+    border-top-left-radius: 10px; /* left border radius to round the background */
+    border-bottom-left-radius: 10px; /* left border radius to round the background */
+}
+
+.form_recherche input{ /* 1st layer style of the two inputs */
+    appearance: none; /* suppress default behaviour */
+    font-weight: 600;
+    font-size: 100%;
+}
+
+.f_ville{ /* specific style of the search input */
+    outline: none; /* no border when focus */
+    width: 140px; /* size of the text area */
+    padding: 0 10px; /* automatic height with flex ; horizontal padding 10px */
+    /* border on top and bottom */
+    border-width: 1px 0;
+    border-color: #F2F2F2;
+    border-style: solid;
+}
+
+.f_ville::placeholder{ /* style for the suggestion text */
+    color: #000; /* black color for suggestion text */
+}
+
+.f_button{ /* specific style of the search button */
+    padding: 0 15px; /* automatic height with flex ; horizontal padding 15px */
+    border-top-right-radius: 10px; /* define border radius to fit with left side of the search icon */
+    border-bottom-right-radius: 10px; /* define border radius to fit with left side of the search icon */
+    background-color: #0065FC;
+    border: 0; /* suppress border */
+    color: #FFF; /* white text */
+}
+.f_button_icon{ /* specific style of the search button with icon for tablet and phone screen */
+    display: none; /* Not use in normal screen mode, only for phone screen */
+}
+
+.filtres{ /* 1st layer style for the filtres area */
+    display: flex; /* activation of flex-box */
+    flex-wrap: wrap; /* Add warp for responsive */
+    margin: 0 5px; /* specific margin to position from the page left side */
+}
+
+.filtres_title{ /* specific style for the title in the filtres area */
+    margin-top: auto; /* in order to center in the horizontal direction */
+    margin-bottom: auto; /* in order to center in the horizontal direction */
+    font-size: 80%;
+    font-weight: 600;
+    margin-right: 20px; /* in order to set distance btw title and the group of filters */
+}
+
+.filtre_list{ /* specific style for the group of filters in the filtres area */
+    display: flex; /* activation of flex-box */
+    flex-wrap: wrap; /* Add warp for responsive */
+    align-content: space-between; /* Vertical position if several line */
+    list-style-type: none; /* no puce */
+    font-weight: 600;
+    font-size: 80%;
+    padding: 0; /* no padding due to list default behaviour, positioning in the child */
+    margin-top: auto; /* in order to center in the horizontal direction due to list default behaviour */
+    margin-bottom: auto; /* in order to center in the horizontal direction due to list default behaviour */
+}
+
+.filtre_list li{ /* definition of the filter text style */
+    margin: 5px 0; /* Get vertical space if several lines */
+}
+
+.filtre_list li span{ /* definition of the filter text style */
+    padding: 7.5px 15px 7px 27px; /* in order to set distance btw each filter and fit with icons (+relative position) */
+    /* definition of the grey border */
+    border-top: 1.5px solid #D9D9D9;
+    border-right: 1.5px solid #D9D9D9;
+    border-bottom: 1.5px solid #D9D9D9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* position to fit icon with filters */
+    position: relative;
+    left: -17px;
+    z-index: 1; /* text below icon for border effect */
+}
+
+.filtre_list li i{ /* definition of the global filter icon style */
+    color: #0065FC;
+    background-color: #DEEBFF;
+    border-radius: 25px; /* for background area shape */
+    position: relative; /* position to fit icon with filters */
+    z-index: 2; /* text below icon for border effect */
+}
+
+.other i{ /* definition of the specific economic filter icon style */
+    padding: 10px; /* specific padding for background surface area in circle */
+}
+
+.economique i{ /* definition of the specific economic filter icon style */
+    padding: 10px 8px; /* specific padding for background surface area in circle */
+}
+
+.familial i{ /* definition of the specific familial filter icon style */
+    padding: 10px 12px; /* specific padding for background surface area in circle */
+}
+
+.filtre_list li:hover i{ /* definition of the specific behaviour for filters icon style when pointer hover */
+    background-color: #F2F2F2; /* change background color */
+    color: grey; /* change icon color */
+    transition: 0.2s; /* transition duration */
+    /* Add relief effect */
+    box-shadow: 0 0 5px 1px #D9D9D9;
+}
+
+.filtre_list li:hover span{ /* definition of the specific behaviour for filters icon style when pointer hover */
+    background-color: #F2F2F2; /* change background color */
+    border-color: #FFF; /* change border color */
+    transition: 0.2s; /* transition duration */
+    /* Add relief effect */
+    box-shadow: inset 0 0 5px 1px #D9D9D9;
+}
+
+.info span{ /* Specific style for the text below filters */
+    margin-top: auto; /* in order to center in the horizontal direction */
+    margin-bottom: auto; /* in order to center in the horizontal direction */
+    position: relative; /* position to fit icon with text horizontally */
+    top: 1px; /* move top of 1 px */
+}
+
+.info i{ /* Specific style for the info icon */
+    font-size: 70%; /* size of the icon */
+    color: #0065FC;
+    border: 1px solid #F2F2F2; /* set border for the circle around */
+    padding: 3px 6px; /* set padding for the size and shape of the circle around */
+    border-radius: 30px; /* set border radius for the shape of the circle around */
+    margin-right: 8px; /* position of the icon with the text */
+}
+
+/* Tablette screen style */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    /* No specification */
+}
+
+/* Phone screen style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Recherche' Section style */
+    .s_recherche{ /* First layer style */
+        margin: 35px 23px 0 23px;
+    }
+
+    .s_recherche h1{ /* First title style */
+        font-size: 140%; /* Size of text */
+    }
+
+    .s_recherche > p{ /* Second line + info line style */
+        padding: 15px 0; /* padding top and bottom to position the text and 0 for other */
+        font-size: 100%; /* Size of text */
+    }
+
+    .form_recherche{ /* First layer style for the form */
+        margin: 20px 0; /* margin to position the form with the above text and the filters section */
+        font-size: 120%; /* Text size for the form */
+    }
+
+    .f_icon_loc{ /* style of the search label icon */
+        font-size: 100%; /* size of the icon */
+        padding: 17px 18px; /* padding to define the size of the background and the form height*/
+        border-top-left-radius: 15px; /* left border radius to round the background */
+        border-bottom-left-radius: 15px; /* left border radius to round the background */
+    }
+
+    .f_ville{ /* specific style of the search input */
+        width: 100%; /* size of the text area to get go behaviour for button and icon */
+        padding: 0 0 0 18px; /* automatic height with flex ; horizontal padding 10px */
+    }
+
+    .f_button{ /* specific style of the search button in normal screen */
+        display: none; /* Hide button 'RECHERCHE' */
+    }
+    
+    .f_button_icon, .f_button_icon::after{ /* specific style of the search button with icon for tablet and phone screen */
+        display: inline; /* Display button with icon */
+        padding: 0 19px; /* automatic height with flex ; horizontal padding 26px */
+        border-radius: 15px; /* define border radius to fit the search icon */
+        background-color: #0065FC;
+        border: 0; /* suppress border */
+        font-size: 90%;
+        color: #FFF; /* white text */
+        /* Displacement to compens radius and gap with search input */
+        position: relative;
+        right: 10px
+    }
+
+    .filtres{ /* 1st layer style for the filtres area */
+        margin: 0; /* specific margin to position from the page left side in section */
+        padding: 10px 0;
+    }
+
+    .filtres_title{ /* specific style for the title in the filtres area */
+        font-size: 120%;
+        padding-bottom: 15px;
+    }
+
+    .filtre_list{ /* specific style for the group of filters in the filtres area */
+        font-size: 110%;
+    }
+
+    .filtre_list li{ /* definition of the filter text style */
+        margin: 7px 0px; /* Get vertical space if several lines */
+    }
+
+    .filtre_list li span{ /* definition of the filter text style */
+        padding: 12px 15px 11.5px 32px; /* in order to set distance btw each filter and fit with icons (+relative position) */
+        /* definition of the grey border */
+        border-top: 2px solid #D9D9D9;
+        border-right: 2px solid #D9D9D9;
+        border-bottom: 2px solid #D9D9D9;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        /* position to fit icon with filters */
+        position: relative;
+        left: -22px;
+    }
+
+    .other i{ /* definition of the specific economic filter icon style */
+        padding: 15px; /* specific padding for background surface area in circle */
+    }
+
+    .economique i{ /* definition of the specific economic filter icon style */
+        padding: 15px 13px; /* specific padding for background surface area in circle */
+    }
+
+    .familial i{ /* definition of the specific familial filter icon style */
+        padding: 15px 17px; /* specific padding for background surface area in circle */
+    }
+
+    .info i{ /* Specific style for the info icon */
+        font-size: 80%; /* size of the icon */
+        border: 1.5px solid #F2F2F2; /* set border for the circle around */
+        padding: 6px 10px; /* set padding for the size and shape of the circle around */
+    }
+}
+
+/* ========================================================================== */
+/* Definition of the 'Hebergement' Section style */
+
+.s_hebergement{ /* 1st layer of Hébergement section Style */
+    box-sizing: border-box;
+    width: 100%; /* 100% due to border-box */
+    padding: 0 35px; /* No padding except for page border side with 35px */
+    display: flex; /* flex-box activation */
+    justify-content: space-between;
+    flex-wrap: wrap; /* go to line if no more place for child element */
+}
+
+.a_hebergement{ /* Hébergement article Style */
+    margin: 15px 0; /* position with margin for background */
+    width: 66%; /* 2/3 for Hébergement, 1/3 for Populaire ; 67% - 1% (for space-between) = 66% */
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.a_hebergement h2{ /* Hébergement title Style */
+    margin: 30px auto 10px 25px; /* position with margin */
+    font-size: 95%;
+}
+
+.div_hebergement{ /* Hébergement Area for cards Style  */
+    margin: 0 25px; /* position with margin */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.div_hebergement a{ /* Hébergement Link Style  */
+    text-decoration: none; /* No link default style */
+    color:#000;
+    width: 31%; /* 1/3 par cards : 33% - 2% (for space-between) */
+    margin: 8px 0; /* position with margin due to link area */
+}
+
+.fig_hebergement{ /* Hébergement cards Style */
+    display: flex; /* keep default flex-start behaviour in order to get figcaption close to img */
+    justify-content: stretch;
+    flex-direction: column;
+    margin: 0; /* Suppress default margin for fig tag */
+    width: 96%; /* cards : 100 - 4 = 96% ( 4 = 2 x 2% padding )*/
+    height: 130px; /* Fixed height to 130px in order to adjust image size */
+    padding: 2%; /* No padding */
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px 5px #D9D9D9;
+}
+
+.fig_hebergement img{ /* Hébergement cards : image Style */
+    height: 63%;  /* Define image height */
+    min-height: 63%; /* Width of the picture will be adapted to get to full height of the picture if max height of picture reached */
+    object-fit: cover; /* keep image proportion and adjust with image area */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.figcap_hebergement{ /* Hébergement cards : figure caption Style */
+    margin: 0px 10px; /* Position of the caption */
+}
+
+.h4_hebergement{ /* Hébergement cards : Name Style */
+    margin: 3px 0px 4px 0px;  /* Position of the Name */
+    font-size: 70%;
+}
+
+.p_hebergement{ /* Hébergement cards : Text Price Style */
+    margin: 0; /* Disable default margin for p tag */
+    font-size: 60%;
+}
+
+.p_hebergement .low_price{ /* Hébergement cards : Low Price Style */
+    font-weight: 600; /* Bold thickness */
+}
+
+.p_hebergement .euros{ /* Hébergement cards : Low Price Style */
+    font-weight: 600; /* Bold thickness */
+}
+
+.p_hebergement .price{ /* Hébergement cards : Normal Price Style */
+    font-weight: 400; /* Normal thickness */
+}
+
+.l_i_hebergement{ /* Hébergement cards : Evaluation Style */
+    list-style-type: none; /* No puce */
+    margin: 0; /* Disable dafault margin for ul tag */
+    padding: 0; /* Disable dafault margin for ul tag */
+    display: flex; /* flex-box for horizontal alinement of icons */
+}
+
+.l_i_hebergement i{ /* Hébergement cards : Size of Stars */
+    font-size: 55%; /* Icon size */
+}
+
+.l_i_hebergement .etoile_bleu{ /* Hébergement cards : Bleu Star */
+    color: #0065FC;
+}
+
+.l_i_hebergement .etoile_grise{ /* Hébergement cards : Grey Star */
+    color: #D9D9D9;
+}
+
+.h3_more a{ /* Hébergement end title Style */
+    text-decoration: none; /* No link default style */
+    color:#000;
+}
+
+.h3_more{ /* Hébergement end title Style */
+    margin: 15px auto 30px 35px; /* position with margin */
+    padding: 0; /* No padding */
+    font-size: 75%;
+    font-weight: 600;
+}
+
+/* ========================================================================== */
+/* Definition of the 'Populaire' Section style */
+.a_populaire{ /* 1st layer of Populaire aside Style */
+    margin: 15px 0; /* position with margin for background */
+    width: 32%; /* 2/3 for Hébergement, 1/3 for Populaire ; 33% - 1% (for space-between) = 32% */
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.title_pop{ /* Populaire title area Style */
+    display: flex; /* Auto horizontal positionning with flex-box*/
+}
+
+.title_pop h2{ /* Populaire title Style */
+    margin: 30px auto 10px 25px; /* position with margin */
+    font-size: 95%;
+}
+
+.title_pop i{ /* Populaire title icon Style */
+    margin: 30px 25px 10px auto; /* position with margin */
+    font-size: 100%;
+}
+
+.div_populaire{ /* Populaire Area for cards Style */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 25px; /* position with margin */
+}
+
+.div_populaire a{ /* Populaire Link Style  */
+    width: 100%;
+    margin: 8px 0; /* position with margin */
+    text-decoration: none; /* No link default style */
+    color:#000;
+}
+
+.fig_populaire{ /* Populaire cards Style */
+    display:flex;
+    margin: 0;
+    width: 97.4%; /* Size of the card with % of margin and padding : 100 - 2 x 1.3 = 97.4% */
+    height: 93px; /* Fixed height to 93px */
+    padding: 1.3%; /* No padding */
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px 5px #D9D9D9;
+}
+
+.fig_populaire img{ /* Populaire cards : image Style */
+    width: 40%; /* Define image width */
+    min-width: 40%; /* Due to 'object-fit: cover' and different image size */
+    object-fit: cover; /* keep image proportion and adjust with image area */
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.figcap_populaire{ /* Populaire cards : figure caption Style */
+    margin: 5px 10px 3px 10px; /* Position of the caption in card */
+    display: flex; /* Active flexbox */
+    flex-direction: column; /* Vertical alignement */
+    justify-content: space-between; /* Constant space between items combined with margin-top auto on stars incons */
+}
+
+.h4_populaire{ /* Populaire cards : Name Style */
+    margin: 2px 0; /* Position title */
+    padding: 0;
+    font-size: 70%;
+}
+
+.p_populaire{ /* Populaire cards : Text Price Style */
+    margin: 2px 0; /* Position text */
+    font-size: 60%;
+}
+
+.p_populaire .euros{ /* Populaire cards : euros Style */
+    font-weight: 600;
+}
+
+.l_i_populaire{ /* Populaire cards : Evaluation Style */
+    list-style-type: none; /* No puce */
+    margin: auto 0 0 0; /* To keep stars on bottom */
+    padding: 0; /* No space around icons */
+    display: flex; /* flex-box for horizontal alignement */
+}
+
+.l_i_populaire i{ /* Populaire cards : Size of Stars */
+    font-size: 50%;
+}
+
+.l_i_populaire .etoile_bleu{ /* Hébergement cards : Bleu Star */
+    color: #0065FC;
+}
+
+.l_i_populaire .etoile_grise{ /* Hébergement cards : Grey Star */
+    color: #D9D9D9;
+}
+
+/* Tablette screen style */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    /* Change for good display in hebergement section */
+    .s_hebergement{ /* 1st layer of Hébergement section Style */
+        flex-direction: column-reverse;
+    }
+
+    .a_hebergement{ /* Hébergement article Style */
+        width: 100%; /* Now 100% */
+        background-color: #FFF;
+        box-shadow: 0px 0px 5px 1px #F2F2F2;
+    }
+
+    .fig_hebergement{ /* Hébergement cards Style */
+        height: 150px; /* Fixed height now to 150px in order to adjust image size */
+    }
+
+    .h4_hebergement{ /* Hébergement cards : Name Style */
+        font-size: 80%;
+    }
+    
+    .p_hebergement{ /* Hébergement cards : Text Price Style */
+        font-size: 70%;
+    }
+
+    .l_i_hebergement i{ /* Hébergement cards : Size of Stars */
+        font-size: 65%; /* Icon size */
+    }
+
+    /* Definition of the 'Populaire' Section style */
+    .a_populaire{ /* 1st layer of Populaire aside Style */
+        width: 100%; /* Now 100% */
+        padding-bottom: 25px;
+    }
+
+    .div_populaire{ /* Populaire Link Style  */
+        justify-content: space-between;
+    }
+
+    .div_populaire a{ /* Populaire Link Style  */
+        width: 31%;
+    }
+
+    .fig_populaire{ /* Populaire cards Style */
+        height: 140px; /* Fixed height to 93px */
+    }
+
+    .fig_populaire img{ /* Populaire cards : image Style */
+        width: 50%; /* Define image width */
+        min-width: 50%; /* Due to 'object-fit: cover' and different image size */
+    }
+
+    .figcap_populaire{ /* Populaire cards : figure caption Style */
+        justify-content: stretch; /* Automatic space between items due to stretch combined with margin-top/bottom auto on p text */
+    }
+
+    .h4_populaire{ /* Populaire cards : Name Style */
+        margin: 12px 0 2px 0; /* Position title */
+        font-size: 80%;
+    }
+
+    .p_populaire{ /* Populaire cards : Text Price Style */
+        margin: auto 0; /* Position title */
+        font-size: 70%;
+    }
+
+    .l_i_populaire{ /* Populaire cards : Evaluation Style */
+        margin: 0 0 12px 0; /* To keep stars on bottom */
+    }
+
+    .l_i_populaire i{ /* Populaire cards : Size of Stars */
+        font-size: 60%;
+    }
+}
+
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Hebergement' Section style */
+    .s_hebergement{ /* 1st layer of Hébergement section Style */
+        margin-top: 25px;
+        padding: 0; /* No padding */
+        flex-direction: column-reverse;
+    }
+
+    .a_hebergement{ /* Hébergement article Style */
+        margin: 0; /* change margin for background */
+        width: 100%; /* change : Full width */
+        background-color: #FFF; /* change to white */
+        border-radius: 0px; /* no more radius */
+    }
+
+    .a_hebergement h2{ /* Hébergement title Style */
+        margin: 37px 23px 15px 23px; /* position with margin */
+        font-size: 150%;
+    }
+
+    .div_hebergement{ /* Hébergement Area for cards Style  */
+        margin: 0 23px; /* position with margin */
+    }
+
+    .div_hebergement a{ /* Hébergement Area for cards Style  */
+        width: 100%; /* full width */
+        margin: 5px 0 7px 0; /* position with margin */
+    }
+
+    .fig_hebergement{ /* Hébergement cards Style */
+        width: 98%; /* full width */
+        height: 195px; /* Fixed height to 130px in order to adjust image size */
+        padding: 1%; /* No padding */
+        border-radius: 20px;
+    }
+
+    .fig_hebergement img{ /* Hébergement cards : image Style */
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+    }
+
+    .figcap_hebergement{ /* Hébergement cards : figure caption Style */
+        margin: 3px 10px; /* Position of the caption */
+    }
+
+    .h4_hebergement{ /* Hébergement cards : Name Style */
+        margin: 6px 0px 4px 0px;  /* Position of the Name */
+        font-size: 100%;
+    }
+
+    .p_hebergement{ /* Hébergement cards : Text Price Style */
+        margin-bottom: 3px;
+        font-size: 90%;
+    }
+
+    .l_i_hebergement i{ /* Hébergement cards : Size of Stars */
+        font-size: 80%; /* Icon size */
+    }
+
+    .h3_more{ /* Hébergement end title Style */
+        margin: 25px auto 30px 23px; /* position with margin */
+        font-size: 120%;
+    }
+
+    /* ========================================================================== */
+    /* Definition of the 'Populaire' Section style */
+    .a_populaire{ /* 1st layer of Populaire aside Style */
+        margin: 0; /* position with margin for background */
+        padding: 0 0 30px 0; /* No padding */
+        width: 100%; /* full width */
+        border-radius: 0px;
+    }
+
+    .title_pop h2{ /* Populaire title Style */
+        margin: 40px auto 15px 23px; /* position with margin */
+        font-size: 150%;
+    }
+
+    .title_pop i{ /* Populaire title icon Style */
+        margin: 40px 23px 15px auto; /* position with margin */
+        font-size: 160%;
+    }
+
+    .div_populaire{ /* Populaire Area for cards Style */
+        margin: 0px 23px 5px 23px; /* position with margin */
+    }
+
+    .div_populaire a{ /* Populaire Area for cards Style */
+        margin: 8px 0;
+    }
+
+    .fig_populaire{ /* Populaire cards Style */
+        height: 140px; /* Fixed height to 93px */
+        width: 98%; /* Size of the card with % of margin and padding : 100 - 4.3 = 95.7% */
+        padding: 1%; /* No padding */
+        border-radius: 20px;
+    }
+
+    .fig_populaire img{ /* Populaire cards : image Style */
+        border-top-left-radius: 17px;
+        border-bottom-left-radius: 17px;
+    }
+
+    .figcap_populaire{ /* Populaire cards : figure caption Style */
+        margin: 10px 2px 6px 20px; /* Position of the caption in card */
+    }
+
+    .h4_populaire{ /* Populaire cards : Name Style */
+        margin: 4px 0; /* Position title */
+        font-size: 100%;
+    }
+
+    .p_populaire{ /* Populaire cards : Text Price Style */
+        margin: 4px 0; /* Position text */
+        font-size: 90%;
+    }
+
+    .l_i_populaire i{ /* Populaire cards : Size of Stars */
+        font-size: 75%;
+    }
+}
+
+/* ========================================================================== */
+/* Definition of the 'Activités' Section style */
+.s_activites{ /* 1st layer of Activités section Style */
+    box-sizing: border-box;
+    width: 100%; /* 100% due to border-box and space in padding */
+    padding: 0 35px; /* No padding except for page border side with 35px 
+    padding used and not margin due to 'box-sizing: border-box' */
+}
+
+.h2_activites_title{ /* Activités title Style */
+    margin: 25px 0 15px 0; /* position with margin */
+    width: 100%;
+    font-size: 95%;
+}
+
+.div_activites{ /* Activités area Style */
+    margin: 5px 0 10px 0; /* position with margin */
+    width: 100%;
+    height: 305px; /* Fixed height to 305px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* on top and on bottom */
+    align-content: space-between; /* Use of align-CONTENT instead of align-ITEMS (only one line)
+    to align on left and on right because more than one line */
+    flex-wrap: wrap;
+}
+
+.link_activites:nth-child(1),
+.link_activites:nth-child(4) { /* activites cards Style portrait */
+    height: 305px; /* Fixed height to cards order number 1 and 4 */
+}
+.link_activites:nth-child(1) img,
+.link_activites:nth-child(4) img{ /* Activités cards : image Style portrait */
+    height: 265px; /* Fixed height to image in cards order number 1 and 4 */
+}
+
+.link_activites:nth-child(2){ /* activites cards Style paysage big */
+    height: 165px; /* Fixed height to cards order number 2 */
+}
+.link_activites:nth-child(2) img{ /* Activités cards : image Style paysage big */
+    height: 125px; /* Fixed height to image in cards order number 2 */
+}
+
+.link_activites:nth-child(3){ /* activites cards Style paysage small */
+    height: 115px; /* Fixed height to cards order number 3 */
+}
+.link_activites:nth-child(3) img{ /* Activités cards : image Style paysage small */
+    height: 75px; /* Fixed height to image in cards order number 3 */
+}
+
+.link_activites:nth-child(5),
+.link_activites:nth-child(6){ /* activites cards Style paysage normal */
+    height: 140px; /* Fixed height to cards order number 5 and 6 */
+}
+.link_activites:nth-child(5) img,
+.link_activites:nth-child(6) img{ /* Activités cards : image Style paysage normal */
+    height: 100px; /* Fixed height to image in cards order number 5 and 6 */
+}
+.link_activites:nth-child(5) img{ /* Activités cards : image Style paysage normal */
+    object-position: 0px -5px; /* Correction position for good view of 'Notre-Dame-de-la-Garde */
+}
+
+.link_activites{ /* Activites Link Style  */
+    width: 23%; /* 4 cards in a line => around 25% but substract margin and padding */
+    text-decoration: none; /* No link default style */
+    color:#000;
+}
+
+.fig_activites { /* activites cards Style : complement  */
+    display:flex; /* Active flexbox */
+    flex-direction: column; /* Vertical alignement; flex-start (default) */
+    align-items: flex-start; /* Secondary direction : items to the left */
+    width: 100%; /* 4 cards in a line => around 25% but substract margin and padding */
+    margin: 0; /* No margin */
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px 5px #F2F2F2;
+}
+
+.fig_activites img{ /* Activités cards image Style : complement  */
+    width: 100%; /* Fixed width image */
+    object-fit: cover; /* keep image proportion and adjust with image area */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.figcap_activite{ /* Activités cards : figure caption Style */
+    height: 40px; /* fixed height to keep same size for each cards */
+    display: flex; /* To center text in caption */
+}
+
+.h3_activite{ /* Activités cards : Name Style */
+    margin: auto 15px; /* center text vertically in content with flexbox */
+    font-size: 70%;
+}
+
+/* Tablette screen style */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .h3_activite{ /* Activités cards : Name Style */
+        font-size: 80%;
+    }
+}
+
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Activités' Section style */
+    .s_activites{ /* 1st layer of Activités section Style */
+        padding: 0 23px; /* No padding except for page border side with 35px */
+    }
+
+    .h2_activites_title{ /* Activités title Style */
+        margin: 25px 0 30px 0; /* position with margin */
+        font-size: 150%;
+    }
+
+    .div_activites{ /* Activités area Style */
+        height: auto; /* No more Fixed height to 305px */
+    }
+
+    .link_activites:nth-child(1),
+    .link_activites:nth-child(4) { /* activites cards Style portrait */
+        height: 205px; /* Fixed height to cards order number 1 and 4 */
+    }
+    .link_activites:nth-child(1) img,
+    .link_activites:nth-child(4) img{ /* Activités cards : image Style portrait */
+        height: 145px; /* Fixed height to image in cards order number 1 and 4 */
+    }
+
+    .link_activites:nth-child(2){ /* activites cards Style paysage big */
+        height: 205px; /* Fixed height to cards order number 2 */
+    }
+    .link_activites:nth-child(2) img{ /* Activités cards : image Style paysage big */
+        height: 145px; /* Fixed height to image in cards order number 2 */
+    }
+
+    .link_activites:nth-child(3){ /* activites cards Style paysage small */
+        height: 205px; /* Fixed height to cards order number 3 */
+    }
+    .link_activites:nth-child(3) img{ /* Activités cards : image Style paysage small */
+        height: 145px; /* Fixed height to image in cards order number 3 */
+    }
+
+    .link_activites:nth-child(5),
+    .link_activites:nth-child(6){ /* activites cards Style paysage normal */
+        height: 205px; /* Fixed height to cards order number 5 and 6 */
+    }
+    .link_activites:nth-child(5) img,
+    .link_activites:nth-child(6) img{ /* Activités cards : image Style paysage normal */
+        height: 145px; /* Fixed height to image in cards order number 5 and 6 */
+    }
+
+    .link_activites{ /* Activites Link Style  */
+        width: 100%; /* 1 cards in a line => 100% */
+        margin-bottom: 20px;
+    }
+
+    .fig_activites { /* activites cards Style : complement  */
+        border-radius: 20px;
+    }
+    .fig_activites img{ /* Activités cards image Style : complement  */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .figcap_activite{ /* Activités cards : figure caption Style */
+        height: 60px; /* fixed height to keep same size for each cards */
+    }
+
+    .h3_activite{ /* Activités cards : Name Style */
+        font-size: 100%;
+    }
+}
+
+/* ========================================================================== */
+/* Definition of the 'Footer' Section style */
+
+.footer{ /* 1st layer Footer style */
+    margin-top: 40px; /* Top vertical space definition */
+    padding: 32px 35px 30px 35px; /* Internal dimension for child */
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer div{ /* sub-aera of footer style */
+    width: 33%; /* Definition of the repartition 1/3 for each */
+}
+
+.footer h2{ /* footer titles style */
+    margin: 0;
+    font-size: 80%;
+}
+
+.footer ul{ /* footer liste style */
+    margin: 7px 0 4px 0; /* Position of the list */
+    padding: 0; /* Disable ul tag padding */
+    list-style-type: none; /* No puce */
+}
+
+.footer li{ /* footer liste items style */
+    padding: 1.5px 0; /* Vertical space for items */
+}
+
+.link_footer{ /* Footer links style */
+    text-decoration: none; /* No link default style */
+    color:#000;
+    font-size: 70%;
+}
+
+/* Tablette screen style */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .footer h2{ /* footer titles style */
+        font-size: 90%;
+    }
+
+    .link_footer{ /* Footer links style */
+        font-size: 80%;
+    }
+}
+
+/* Phone screen ; standard style */
+@media screen and (max-width: 767px){
+    /* Definition of the 'Footer' Section style */
+    .footer{ /* 1st layer Footer style */
+        margin-top: 25px; /* Top vertical space definition */
+        padding: 30px 23px 20px 23px; /* Internal dimension for child */
+        flex-direction: column;
+    }
+
+    .footer div{ /* sub-aera of footer style */
+        width: 100%; /* Definition of the repartition 1/3 for each */
+    }
+
+    .footer h2{ /* footer titles style */
+        margin-top: 10px;
+        margin-bottom: 15px;
+        padding: 5px 0;
+        font-size: 110%;
+    }
+
+    .footer ul{ /* footer liste style */
+        margin: 7px 0 25px 0; /* Position of the list */
+    }
+
+    .footer li{ /* footer liste items style */
+        margin: 12px 0;
+    }
+
+    .link_footer{ /* Footer links style */
+        font-size: 100%;
+    }
+}
